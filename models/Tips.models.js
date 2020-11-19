@@ -4,17 +4,14 @@ const Schema = mongoose.Schema;
 
 const tipsSchema = new Schema(
     {
+        _id: Schema.Types.ObjectId,
         title: {type: String,required: true},
         description: {type: String, maxlength: 120},
         text: {type: String, maxlength: 600},
         image: {type: String},
-        user: [{type: Schema.Types.ObjectId, ref: "User" }]
-    },
-    {
-      timestamps: {
-        createdAt: "created_at",
-        updatedAt: "updated_at"
-      },
+        userId: {type: Schema.Types.ObjectId, ref: "User" },
+        createdAt: {type: Date, required: true, default: Date.now},
+        updatedAt: {type: Date}
     }
     );
 
@@ -23,5 +20,6 @@ const Tip = mongoose.model("Tip", userSchema);
 
 // EXPORT THE MODEL
 module.exports = Tips;
+
 
 
