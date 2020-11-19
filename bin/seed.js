@@ -18,24 +18,24 @@ mongoose
       return pr;
   })
   .then(() =>{
-      const pr = Users.create(users);
+      const pr = User.create(users);
       return pr;
   })
   .then((createdUsers) => {
-      console.log(`Created ${createdUsers.lenght} users`);
+      console.log(`Created ${createdUsers.length} users`);
 
       const updatedTips = tips.map((tipsObj, i) =>{
-          const users = createdUsers[i];
-          bookObj.users = [user._id];
+          const user = createdUsers[i];
+          tipsObj.user = user._id;
 
           return userObj;
       });
       
-      const pr = User.create(updatedTips);
+      const pr = Tips.create(updatedTips);
       return pr;
   })
   .then((createdTips) =>{
-      console.log(`Inserted ${createdTips.legth} tips`);
+      console.log(`Inserted ${createdTips.length} tips`);
       mongoose.connection.close();
   })
   .catch((err) => console.log(err));

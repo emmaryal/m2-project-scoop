@@ -10,13 +10,13 @@ const tipsSchema = new Schema(
         text: {type: String, maxlength: 600},
         image: {type: String},
         userId: {type: Schema.Types.ObjectId, ref: "User" },
-        createdAt: {type: Date, required: true, default: Date.now},
+        createdAt: {type: Date, required: true, default: Date.now()},
         updatedAt: {type: Date}
     }
     );
 
  // CREATE THE MODEL
-const Tip = mongoose.model("Tip", userSchema);
+const Tips = mongoose.model("Tip", tipsSchema);
 
 // EXPORT THE MODEL
 module.exports = Tips;
