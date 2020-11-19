@@ -2,10 +2,10 @@ const mongoose = require("mongoose");
 const User = require("./../models/User.model");
 const Tips = require("./../models/Tips.models");
 
-const books = require("./books-mock-data");
-const authors = require("./authors-mock-data");
+const users = require("./users-mock-data");
+const tips = require("./tips-mock-data");
 
-const DB_NAME = "library";
+const DB_NAME = "scoopdb";
 
 mongoose
   .connect(`mongodb://localhost:27017/${DB_NAME}`, {
@@ -18,24 +18,24 @@ mongoose
       return pr;
   })
   .then(() =>{
-      const pr = Author.create(authors);
+      const pr = Users.create(users);
       return pr;
   })
-  .then((createdAuthors) => {
-      console.log(`Created ${createdAuthors.lenght} authors`);
+  .then((createdUsers) => {
+      console.log(`Created ${createdUsers.lenght} users`);
 
-      const updatedBooks = books.map((bookObj, i) =>{
-          const author = createdAuthors[i];
-          bookObj.authors = [author._id];
+      const updatedTips = tips.map((tipsObj, i) =>{
+          const users = createdUsers[i];
+          bookObj.users = [user._id];
 
-          return bookObj;
+          return userObj;
       });
       
-      const pr = Book.create(updatedBooks);
+      const pr = User.create(updatedTips);
       return pr;
   })
-  .then((createdBooks) =>{
-      console.log(`Inserted ${createdBooks.legth} books`);
+  .then((createdTips) =>{
+      console.log(`Inserted ${createdTips.legth} tips`);
       mongoose.connection.close();
   })
   .catch((err) => console.log(err));
