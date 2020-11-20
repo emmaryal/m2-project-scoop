@@ -5,7 +5,7 @@ const Tips = require("./../models/Tips.models");
 const users = require("./users-mock-data");
 const tips = require("./tips-mock-data");
 
-const DB_NAME = "scoopdb";
+const DB_NAME = "DB_Scoop";
 
 mongoose
   .connect(`mongodb://localhost:27017/${DB_NAME}`, {
@@ -26,9 +26,10 @@ mongoose
 
       const updatedTips = tips.map((tipsObj, i) =>{
           const user = createdUsers[i];
+          //console.log("hi", user)
           tipsObj.user = user._id;
 
-          return userObj;
+          return tipsObj;
       });
       
       const pr = Tips.create(updatedTips);

@@ -3,11 +3,14 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
+    { 
+        name: {type: String, unique: true},
+        password: {type: String}, // (validated bcrypt),
+    },
     {
-        _id: Schema.Types.ObjectId,  
-        name: {type: String, unique: true, required: true},
-        password: {type: String, required: true}, // (validated bcrypt),
-        createdAt: {type: Date, required: true, default: Date.now()}
+        timestamps:{
+            createdAt: "created_at",
+        },
     }
     );
 
