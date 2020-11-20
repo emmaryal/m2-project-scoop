@@ -5,7 +5,7 @@ function Layout(props) {
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        <title> {props.title ? props.title : "My App"} </title>
+        <title> {props.title ? props.title : "Scoop"} </title>
         <link rel="stylesheet" href="/stylesheets/style.css" />
       </head>
 
