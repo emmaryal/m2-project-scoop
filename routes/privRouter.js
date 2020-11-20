@@ -10,7 +10,8 @@ privRouter.get("searchTips", isLoggedIn, (req, res, next) =>{
 })
 
 // CREATE TIP 
-privRouter.get("/create", isLoggedIn, (req, res, next) => {   
+privRouter.get("/create", isLoggedIn, (req, res, next) => { 
+  res.render('CreateTip');
   });
   
 
