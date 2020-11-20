@@ -54,8 +54,9 @@ app.use(
 
 // ROUTES
 app.use("/auth", authRouter);
-app.use("/", siteRouter);
+
 app.use("/private", privRouter);
+app.use("/", siteRouter);
 /* GET home page. 
 app.get("/", (req, res, next) => {
   res.render("Home");

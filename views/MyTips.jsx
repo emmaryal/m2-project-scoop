@@ -1,13 +1,13 @@
 const React = require("react");
 const Layout = require("./Layout");
 
-function TipsList() {
+function MyTips() {
   return (
-    <Layout title="Tips List">
-      <h1>List of Tips</h1>
+    <Layout title="My Tips List">
+      <h1>My List of Tips</h1>
       
     </Layout>
   );
 }
 
-module.exports = TipsList;
+module.exports = MyTips;
