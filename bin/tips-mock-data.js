@@ -22,4 +22,4 @@ const tips =[
     }
 ];
 
-module.exports = tips;
+module.exports = tips

@@ -9,12 +9,8 @@ const tipsSchema = new Schema(
         text: {type: String, maxlength: 600},
         image: {type: String},
         userId: {type: Schema.Types.ObjectId, ref: "User" },
-    },
-    {   
-        timestamps:{
-        createdAt: "created_at",
-        updatedAt: "upsated_at"
-        }, 
+        createdAt: {type: Date, required: true, default: Date.now()},
+        updatedAt: {type: Date}
     }
     );
 

@@ -1,6 +1,7 @@
 const User = require("./../models/User.model");
 
-const users = [{
+const users = [
+    {
         name: "Lola",
         password: "gubligubli",
         createdAt:new Date(2020, 11, 24)
