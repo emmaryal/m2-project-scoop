@@ -29,7 +29,7 @@ mongoose
           //console.log("hi", user)
           tipsObj.user = user._id;
 
-          return tipsObj;
+          return usersObj;
       });
       
       const pr = Tips.create(updatedTips);

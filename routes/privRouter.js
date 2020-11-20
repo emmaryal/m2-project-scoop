@@ -11,9 +11,9 @@ res.render("MyTips")
 });
 
 // CREATE TIP 
-privRouter.get("/create",/* isLoggedIn, */(req, res, next) => {   
-res.render("CreateTip")  
-});
+privRouter.get("/create", isLoggedIn, (req, res, next) => { 
+  res.render('CreateTip');
+  });
   
 
   // DELETE /tips - delete or update a tip
