@@ -16,7 +16,7 @@ function CreateTip(props) {
         <imput type="text" name="tip-description" placeholder="2 lines description" />
         <br/>
         <imput type="text" name="tip content" placeholder="You can write your tip here"/>
-        <buttom ttype="submit">Create Tip</buttom>
+        <button ttype="submit">Create Tip</button>
 
         {
           PromiseProvider.errorMessage
