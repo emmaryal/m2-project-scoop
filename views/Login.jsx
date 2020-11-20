@@ -4,7 +4,7 @@ const Layout = require("./Layout");
 function Login() {
   return (
     <Layout title="Login Page">
-      <form id="form" /*action="/auth/login" method="POST"*/>
+      <form id="form" action="/auth/login" method="POST">
         <label>Username</label>
         <br />
         <input type="text" name="username" placeholder="Your username" />
