@@ -3,7 +3,7 @@ var authRouter = express.Router();
 
 const bcrypt = require("bcrypt");
 const User = require("./../models/User.model");
-const zxcvbn = require("zxcvbn");
+//const zxcvbn = require("zxcvbn");
 
 const isLoggedIn = require("./../utils/isLoggedIn");
 const saltRounds = 5;
