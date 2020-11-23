@@ -42,12 +42,14 @@ function Layout(props) {
               <a className="dropdown-item" href="/">
                 Home
               </a>
+              {props.user ? (null) : (
               <a className="dropdown-item" href="/auth/login">
                 Login
-              </a>
+              </a>)}
+              {props.user ? (null) : (
               <a className="dropdown-item" href="/auth/signup">
                 Signup
-              </a>
+              </a>)}
 
               {props.user ? (
                 <a className="dropdown-item" href="/private/tipslist">

@@ -4,7 +4,7 @@ const Layout = require("./Layout");
 
 function Signup(props) {
   return (
-    <Layout title="Sign Up Page">
+    <Layout title="Sign Up Page" user={props.user}>
       <div className = "form-wrapper"><form className="auth-form" action="/auth/signup" method="POST">
         
         <input type="email" name="email" placeholder="Please enter your email" />

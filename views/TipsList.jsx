@@ -1,7 +1,7 @@
 const React = require("react");
 const Layout = require("./Layout");
 
-function MyTips(props) {
+function TipsList(props) {
   return (
     <Layout title="My List of Tips" user={props.user}>
       <h1>My List of Tips</h1>
@@ -9,4 +9,4 @@ function MyTips(props) {
   );
 }
 
-module.exports = MyTips;
+module.exports = TipsList;
