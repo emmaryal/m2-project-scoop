@@ -19,12 +19,15 @@ const app = express();
 
 // DB CONNECTION
 mongoose
-  .connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("Connected to the DB."))
-  .catch((err) => console.log(err));
+
+mongoose
+  .connect(
+    process.env.MONGODB_URI,            //  <--- UPDATE
+    {useNewUrlParser: true}
+	)
+  .then((x) => console.log('Connected to the DB')
+  .catch(err => console.error('Error while connecting to DB', err)));
+  
 
 // VIEW ENGINE SETUP
 app.set("views", __dirname + "/views");
