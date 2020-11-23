@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const mongoose = require("mongoose");
 const User = require("./../models/User.model");
 const Tips = require("./../models/Tips.models");
@@ -7,12 +9,18 @@ const tips = require("./tips-mock-data");
 
 const DB_NAME = "DB_Scoop";
 
-mongoose
-  .connect(`mongodb://localhost:27017/${DB_NAME}`, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-  })
+
+
+
+
+
+
+
+  mongoose
+  .connect(
+    process.env.MONGODB_URI,            //  <--- UPDATE
+    {useNewUrlParser: true}
+	)
   .then((x) =>{
       const pr = x.connection.dropDatabase();
       return pr;
