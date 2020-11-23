@@ -24,9 +24,10 @@ function CreateTip(props) {
         }
       </form>
 
-    </Layout>const { PromiseProvider } = require("mongoose");
-const React = require("react");
-const Layout = require("./Layout");
+   </Layout> 
+    const { PromiseProvider } = require("mongoose");
+    const React = require("react");
+    const Layout = require("./Layout");
 
 function CreateTip(props) {
   return (
@@ -53,9 +54,6 @@ function CreateTip(props) {
     </Layout>
   );
 }
-
-module.exports = CreateTip;
-  );
 }
 
 module.exports = CreateTip;
