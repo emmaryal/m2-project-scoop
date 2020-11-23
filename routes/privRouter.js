@@ -2,7 +2,7 @@ var express = require("express");
 var privRouter = express.Router();
 const isLoggedIn = require("./../utils/isLoggedIn");
 const User = require("./../models/User.model");
-const Tips = require("../models/Tips.models");
+const Tips = require("./../models/Tips.models");
 
 // Your routes
 
@@ -38,7 +38,7 @@ privRouter.get("/tipslist", isLoggedIn,(req, res, next) =>{
   .catch((err) => console.log(err));
 });
 
- /*//GET  /update tip -render update tip form
+//GET  /update tip -render update tip form
 privRouter.get("/updatetip", (req, res, next) => {
   // Get the tipid passed via the link.
   // Example:    <a href="/tips/edit?tipkid=123">
@@ -69,7 +69,7 @@ privRouter.post("/update", (req, res, next) => {
       res.redirect("/tiplist");
     })
     .catch((error) => console.error(error));
-});*/
+});
 
 
   // DELETE /tips - delete or update a tip

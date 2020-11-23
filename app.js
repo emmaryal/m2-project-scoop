@@ -55,7 +55,6 @@ app.use(
 // ROUTES
 app.use("/", siteRouter);
 app.use("/auth", authRouter);
-
 app.use("/private", privRouter);
 
 //GET home page. 
