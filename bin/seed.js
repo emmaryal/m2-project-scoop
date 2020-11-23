@@ -24,12 +24,11 @@ mongoose
   .then((createdUsers) => {
       console.log(`Created ${createdUsers.length} users`);
 
+      if(tips.length != createdUsers.length) {return;}
       const updatedTips = tips.map((tipsObj, i) =>{
           const user = createdUsers[i];
-          //console.log("hi", user)
           tipsObj.user = user._id;
-
-          return usersObj;
+          return tip;
       });
       
       const pr = Tips.create(updatedTips);
