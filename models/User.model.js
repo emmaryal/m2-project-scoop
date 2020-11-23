@@ -4,8 +4,10 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
     { 
-        name: {type: String, unique: true,},
-        password: {type: String, required: true}, // (validated bcrypt),
+        email: {type: String, unique: true},
+        name: {type: String},
+        password: {type: String, required: true}, 
+        
         createdAt: {type: Date, required: true, default: Date.now()}
     }
     );

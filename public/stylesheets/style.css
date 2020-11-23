@@ -1,8 +1,126 @@
+
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Amatic SC', cursive;
+}
+
+
+
+button {
+  background: white;
+  border: 1px solid grey;
+  border-radius: 4px;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.3s ease background;
+  width: 100%;
+}
+
+button:hover {
+  background: #fff;
+  color: #43a3e6;
+  transition: 0.3s ease background;
+}
+
+.error-message {
+  
+  box-sizing: border-box;
+  text-align: center;
+  background-color: white;
+  border-radius: 5px;
+  border-color: gray;
+  color: black;
+  margin: 20px auto;
+  padding: 20px;
+  width: 100%;
+}
+
+body {
+  padding: 50px;
+  font-family: 'Amatic SC', cursive;
+  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+}
+
+.dropdown {
+  margin-bottom: 50px;
+  padding-top: 10px;
+  font-size: large;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: green;
+  border: black 10px;
+  margin:  auto;
+  padding: 10px 20px;
+  width: 90vw;
+  height: 70vh;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width:80%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.form-button {
+  font-size: large;
+  padding: 10px;
+  margin: 5px;
+  font-family: 'Amatic SC', cursive;
+  width: 60%;
+}
+
+
+input  {
+  font-size: large;
+  padding: 10px;
+  margin: 5px;
+  font-family: 'Amatic SC', cursive;
+  text-align: center;
+  width: 60%;
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
+}
+nav {
+  width: 100%;
+  background-image: none;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0;
+}
+
+li {
+  padding: 25px 10px 0 10px;
+}
+
+.btn-secondary {
+  font-size: 50px;
+  
+}
+
+.dropdown {
+  font-size: 30px;
+  padding-top: 15px;
+  font-family: 'Amatic SC', cursive;
 }

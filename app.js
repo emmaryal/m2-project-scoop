@@ -12,6 +12,8 @@ const MongoStore = require("connect-mongo")(session);
 const authRouter = require("./routes/authRouter");
 const siteRouter = require("./routes/siteRouter");
 const privRouter = require("./routes/privRouter");
+const { json } = require("express");
+
 
 const app = express();
 
@@ -52,6 +54,8 @@ app.use(
   })
 );
 
+
+
 // ROUTES
 app.use("/auth", authRouter);
 
@@ -61,5 +65,22 @@ app.use("/", siteRouter);
 app.get("/", (req, res, next) => {
   res.render("Home");
 });*/
+
+
+// GET ERROR PAGES
+// Handle 404 - Keep this as a last route
+app.use(function(req, res, next) {
+  res.status(404);
+  res.send('WHOOPSY! 404: File Not Found');
+});
+
+app.use(function(req, res, next) {
+  res.status(500);
+  res.send('WHOOPSY! 500: Server error');
+});
+
+
+
+
 
 module.exports = app;
