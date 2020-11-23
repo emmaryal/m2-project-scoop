@@ -55,7 +55,7 @@ app.use(
 // ROUTES
 app.use("/", siteRouter);
 app.use("/auth", authRouter);
-app.use("/tips", tipsRouter);
+//app.use("/tips", tipsRouter);
 
 app.use("/private", privRouter);
 

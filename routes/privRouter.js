@@ -17,22 +17,26 @@ privRouter.get("/createtip", /* isLoggedIn, */ (req, res, next) => {
   });
 
 //POST recieves the data from create tip form
-privRouter.post("/createtip", (req, res, next )=> {
-  const {title, description, content} = req.body;
-  if (title === ''|| description === '' || content === ''){
-    const props = {errorMessage: 'Please fill in all fields '}
-    res.render('CreateTip', props);
-    return;
-  }
-  //If all are provided - create new tip in the database
-  Tip.create({title:title, description:description, content:content})
-    .then((data) => {
-      //when tip is created redirect to tip detail
-      res.redirect('/TipDetail')
+privRouter.post("/createtip", (req, res, next) => {
+  // Destructure the values coming from the POST form
+  const { title, description, content} = req.body;
+  Tips.create({ title, description, content})
+    .then((tip) => {
+      res.redirect("/tipslist");
     })
     .catch((err) => console.log(err));
 });
-  
+
+// GET /tips - render tips page
+privRouter.get("/tipslist", isLoggedIn,(req, res, next) =>{
+  const userid = req.session.currentUser._id;
+  User.findById(userid)
+  .then((user) => {
+      const props = {user: user};
+      res.render("TipsList", props);
+  })
+  .catch((err) => console.log(err));
+});
 
   // DELETE /tips - delete or update a tip
   privRouter.get("/update", /* isLoggedIn, */(req, res, next) => {   
