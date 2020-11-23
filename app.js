@@ -57,14 +57,16 @@ app.use(
 
 
 // ROUTES
+app.use("/", siteRouter);
 app.use("/auth", authRouter);
+//app.use("/tips", tipsRouter);
 
 app.use("/private", privRouter);
-app.use("/", siteRouter);
-/* GET home page. 
+
+//GET home page. 
 app.get("/", (req, res, next) => {
   res.render("Home");
-});*/
+});
 
 
 // GET ERROR PAGES
