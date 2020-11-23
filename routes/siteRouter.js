@@ -9,6 +9,17 @@ siteRouter.get('/', function(req, res, next) {
   });
 
 /* GET search results page */
+siteRouter.get("/alltips", (req, res, next) => {
+  res.render('AllTips')
+
+  Tips.find()
+
+    .then((allTipsFromDB) => {
+      const props = { tips: allTipsFromDB };
+      res.render("AllTips", props);
+    })
+    .catch((err) => console.log(err));
+});
 
 
 module.exports = siteRouter;

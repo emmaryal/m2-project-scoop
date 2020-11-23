@@ -3,9 +3,9 @@ const React = require("react");
 function Card(props) {
   return (
     <div>
-      <h1>Card component example</h1>
-      <img src={props.image} width="100" alt="" />
-      <p>{props.text}</p>
+      <h1>Tip</h1> 
+      <p>{props.title}</p>
+      <p>{props.description}</p>
     </div>
   );
 }

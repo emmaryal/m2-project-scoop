@@ -38,6 +38,40 @@ privRouter.get("/tipslist", isLoggedIn,(req, res, next) =>{
   .catch((err) => console.log(err));
 });
 
+ /*//GET  /update tip -render update tip form
+privRouter.get("/updatetip", (req, res, next) => {
+  // Get the tipid passed via the link.
+  // Example:    <a href="/tips/edit?tipkid=123">
+  const {tipid} = req.query;
+
+// Find the specific tip by `_id`
+  Tip.findOne({ _id: tipid })
+    .then((oneTip) => {
+      const props = {oneTip: oneTip};
+      res.render("UpdateTip", props);
+    })
+    .catch((err) => console.log(err));
+});
+
+  // POST  /tips/update
+privRouter.post("/update", (req, res, next) => {
+  const { tipid } = req.query;
+  const { title, description, content } = req.body;
+
+  Tip.findByIdAndUpdate(
+    tipkid,
+    { title, description, content },
+    { new: true }
+    //{new : true} is used to get the updated document version returned after the update
+  )
+    .then((updatedTip) => {
+      console.log("tip document after the update", updatedTip);
+      res.redirect("/tiplist");
+    })
+    .catch((error) => console.error(error));
+});*/
+
+
   // DELETE /tips - delete or update a tip
   privRouter.get("/update", /* isLoggedIn, */(req, res, next) => {   
     res.render("UpdateTip")  
