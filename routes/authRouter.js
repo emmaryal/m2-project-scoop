@@ -8,7 +8,6 @@ const zxcvbn = require("zxcvbn");
 const isLoggedIn = require("./../utils/isLoggedIn");
 const saltRounds = 5;
 
-
 // Your routes
 
 // GET login - render login page
@@ -42,9 +41,9 @@ authRouter.post("/login", (req, res, next) => {
     if (passwordCorrect) {
       // Create the session - which also triggers the creation of the cookie
       req.session.currentUser = email;
-      console.log("Welcome", { email: email });
+      console.log("current user email", { email: email });
 
-      res.redirect("./../private/TipsList");
+      res.redirect("./../private/createtip");
     } else {
       res.render("Login", { errorMessage: "Incorrect password" });
     }
@@ -69,8 +68,6 @@ authRouter.post("/signup", (req, res, next) => {
     return;
   }
 
-
-
   User.findOne({ email: email })
     .then((user) => {
       if (user) {
@@ -79,15 +76,13 @@ authRouter.post("/signup", (req, res, next) => {
         return;
       }
 
-
-   if ( zxcvbn(password).score < 3  ) {
+      if (zxcvbn(password).score < 3) {
         const suggestions = zxcvbn(password).feedback.suggestions;
-       console.log('suggestions', suggestions);
-       const props = {  errorMessage: suggestions[0] }  
-       res.render('Signup', props);
-       return;
-        }
-
+        console.log("suggestions", suggestions);
+        const props = { errorMessage: suggestions[0] };
+        res.render("Signup", props);
+        return;
+      }
 
       const salt = bcrypt.genSaltSync(saltRounds);
       const hashedPassword = bcrypt.hashSync(password, salt);
@@ -95,25 +90,22 @@ authRouter.post("/signup", (req, res, next) => {
         .then((createdUser) => {
           console.log("created user :", createdUser);
           req.session.currentUser = email;
-         
-         res.redirect("./../private/TipsList");
+
+          res.redirect("./../private/createtip");
         })
         .catch((err) => console.log(err));
     })
     .catch((err) => console.log(err));
 });
 
-authRouter.get('/logout', isLoggedIn, (req, res, next) => {
-  req.session.destroy( (err) => {
+authRouter.get("/logout", isLoggedIn, (req, res, next) => {
+  req.session.destroy((err) => {
     if (err) {
-      res.render('Error')
+      res.render("Error");
+    } else {
+      res.redirect("/auth/login");
     }
-    else {
-      res.redirect('/auth/login');
-    }
-  })
-})
-
-
+  });
+});
 
 module.exports = authRouter;

@@ -3,7 +3,6 @@ const isLoggedIn = require("./../utils/isLoggedIn");
 
 function Layout(props) {
   return (
-    /* also put the header menu here */
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
@@ -43,14 +42,16 @@ function Layout(props) {
               <a className="dropdown-item" href="/">
                 Home
               </a>
-              {props.user ? (null) : (
-              <a className="dropdown-item" href="/auth/login">
-                Login
-              </a>)}
-              {props.user ? (null) : (
-              <a className="dropdown-item" href="/auth/signup">
-                Signup
-              </a>)}
+              {props.user ? null : (
+                <a className="dropdown-item" href="/auth/login">
+                  Login
+                </a>
+              )}
+              {props.user ? null : (
+                <a className="dropdown-item" href="/auth/signup">
+                  Signup
+                </a>
+              )}
 
               {props.user ? (
                 <a className="dropdown-item" href="/private/tipslist">
@@ -61,7 +62,16 @@ function Layout(props) {
                   Login for private area
                 </a>
               )}
-
+              {props.user ? (
+                <a className="dropdown-item" href="/private/createtip">
+                  create tip
+                </a>
+              ) : null}
+              {props.user ? (
+                <a className="dropdown-item" href="/private/tips/edit">
+                  edit tip
+                </a>
+              ) : null}
               {props.user ? (
                 <a className="dropdown-item" href="/auth/logout">
                   Logout

@@ -5,9 +5,9 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema(
     { 
         email: {type: String},
-        //name: {type: String},
+        name: {type: String},
         password: {type: String}, 
-        
+        createdTips: [{type: Schema.Types.ObjectId, ref: "Tips" }],
         createdAt: {type: Date, required: true, default: Date.now()}
     }
     );

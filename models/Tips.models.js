@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const tipsSchema = new Schema(
     {
-        title: {type: String,required: true},
+        title: {type: String, required: true},
         description: {type: String, maxlength: 120},
         text: {type: String, maxlength: 600},
         image: {type: String},
@@ -15,15 +15,9 @@ const tipsSchema = new Schema(
     );
 
  // CREATE THE MODEL
-const Tips = mongoose.model("Tip", tipsSchema);
+const Tips = mongoose.model("Tips", tipsSchema);
 
-Tips.findTipById = (id) => {
-    return Tips.findById(id)
-        .exec()
-        .then((data) => {
-            return data;
-        })
-}
+
 
 // EXPORT THE MODEL
 module.exports = Tips;
