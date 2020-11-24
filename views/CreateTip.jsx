@@ -15,7 +15,7 @@ function CreateTip(props) {
         <br/>
         <input type="text" name="description" placeholder="2 lines description" />
         <br/>
-        <input type="text" name="content" placeholder="You can write your tip here"/>
+        <input type="text" name="text" placeholder="You can write your tip here"/>
         <button type="submit">Create Tip</button>
 
         {

@@ -15,15 +15,8 @@ const tipsSchema = new Schema(
     );
 
  // CREATE THE MODEL
-const Tips = mongoose.model("Tip", tipsSchema);
+const Tips = mongoose.model("Tips", tipsSchema);
 
-Tips.findTipById = (id) => {
-    return Tips.findById(id)
-        .exec()
-        .then((data) => {
-            return data;
-        })
-}
 
 // EXPORT THE MODEL
 module.exports = Tips;

@@ -19,10 +19,10 @@ privRouter.get("/createtip", /* isLoggedIn, */ (req, res, next) => {
 //POST recieves the data from create tip form
 privRouter.post("/createtip", (req, res, next) => {
   // Destructure the values coming from the POST form
-  const { title, description, content} = req.body;
-  Tips.create({ title, description, content})
+  const { title, description, text} = req.body;
+  Tips.create({ title, description, text})
     .then((tip) => {
-      res.redirect("/tipslist");
+      res.redirect("/alltips");
     })
     .catch((err) => console.log(err));
 });
@@ -39,14 +39,15 @@ privRouter.get("/tipslist", isLoggedIn,(req, res, next) =>{
 });
 
 //GET  /update tip -render update tip form
-privRouter.get("/tips/edit", (req, res, next) => {
+privRouter.get("/tips/edit/:tipid", (req, res, next) => {
   // Get the tipid passed via the link.
   // Example:    <a href="/tips/edit?tipid=123">
   const {tipid} = req.query;
 
 // Find the specific tip by `_id`
-  Tips.findOne({ _id: tipid })
+  Tips.findById(tipid)
     .then((oneTip) => {
+      console.log(oneTip, "oneTip")
       const props = {oneTip: oneTip};
       res.render("UpdateTip", props);
     })
@@ -54,19 +55,19 @@ privRouter.get("/tips/edit", (req, res, next) => {
 });
 
   // POST  /tips/update
-privRouter.post("/update", (req, res, next) => {
+privRouter.post("/tips/edit/:tipid", (req, res, next) => {
   const { tipid } = req.query;
-  const { title, description, content } = req.body;
+  const { title, description, text } = req.body;
 
   Tips.findByIdAndUpdate(
-    tipkid,
-    { title, description, content },
+    tipid,
+    { title, description, text},
     { new: true }
     //{new : true} is used to get the updated document version returned after the update
   )
     .then((updatedTip) => {
       console.log("tip document after the update", updatedTip);
-      res.redirect("/tiplist");
+      res.redirect("/tipslist");
     })
     .catch((error) => console.error(error));
 });
