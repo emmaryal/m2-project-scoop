@@ -2,7 +2,7 @@ var express = require("express");
 var privRouter = express.Router();
 const isLoggedIn = require("./../utils/isLoggedIn");
 const User = require("./../models/User.model");
-const Tips = require("../models/Tips.models");
+const Tips = require("./../models/Tips.models");
 
 // Your routes
 
@@ -44,14 +44,14 @@ privRouter.get("/tipslist", isLoggedIn,(req, res, next) =>{
   .catch((err) => console.log(err));
 });
 
- /*//GET  /update tip -render update tip form
-privRouter.get("/updatetip", (req, res, next) => {
+//GET  /update tip -render update tip form
+privRouter.get("/tips/edit", (req, res, next) => {
   // Get the tipid passed via the link.
-  // Example:    <a href="/tips/edit?tipkid=123">
+  // Example:    <a href="/tips/edit?tipid=123">
   const {tipid} = req.query;
 
 // Find the specific tip by `_id`
-  Tip.findOne({ _id: tipid })
+  Tips.findOne({ _id: tipid })
     .then((oneTip) => {
       const props = {oneTip: oneTip};
       res.render("UpdateTip", props);
@@ -64,7 +64,7 @@ privRouter.post("/update", (req, res, next) => {
   const { tipid } = req.query;
   const { title, description, content } = req.body;
 
-  Tip.findByIdAndUpdate(
+  Tips.findByIdAndUpdate(
     tipkid,
     { title, description, content },
     { new: true }
@@ -75,7 +75,7 @@ privRouter.post("/update", (req, res, next) => {
       res.redirect("/tiplist");
     })
     .catch((error) => console.error(error));
-});*/
+});
 
 
   // DELETE /tips - delete or update a tip

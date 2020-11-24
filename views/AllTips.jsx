@@ -5,7 +5,7 @@ const Card = require("./components/Card");
 function AllTips(props) {
   return (
     <Layout title="All our Tips" user={props.user}>
-      <h1>My List of Tips</h1>
+      <h1>List of Tips</h1>
       {
         props.tips.map((tip, i) => {
           console.log(props.tips)
