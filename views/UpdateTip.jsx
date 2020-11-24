@@ -8,7 +8,7 @@ function UpdateTip(props) {
 
       <h1>Update or Delete a Tip</h1>
 
-      <form id="updatetip-form" action={`/tips/update?tipid=${props.oneTip._id}`}  method="POST">
+      <form action="/tips/edit" method="POST">
         <label>Title:</label>
         <input type="text" name="title" value={props.oneTip.title}/>
         <br />

@@ -1,6 +1,7 @@
 var express = require("express");
 var siteRouter = express.Router();
 var Tips = require("./../models/Tips.models");
+const findTipById = require("../services/tip/findTipById");
 
 // Your routes
 

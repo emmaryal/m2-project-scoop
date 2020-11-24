@@ -2,15 +2,16 @@ const React = require("react");
 const Layout = require("./Layout");
 
 function Home() {
-  return (
-    <Layout title="Home Page">
-      <h1>Home Page</h1>
+    return (
+        <Layout title="Home Page">
+            <form id="form" action="/alltips" method="GET">
+                <h1>Home Page</h1>
 
-      <input type="text" name="search" placeholder="Paper towel"/>
-        <button type="search">Find a Tip</button>
-
-    </Layout>
-  );
+                <input type="text" name="search" placeholder="Paper towel"/>
+                <button type="search">Find a Tip</button>
+            </form>
+        </Layout>
+    );
 }
 
 module.exports = Home;
