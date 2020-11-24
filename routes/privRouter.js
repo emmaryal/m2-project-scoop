@@ -90,11 +90,11 @@ privRouter.get("/tips/edit/:tipid", (req, res, next) => {
 // POST  /tips/update
 privRouter.post("/update", (req, res, next) => {
   const { tipid } = req.query;
-  const { title, description, content } = req.body;
+  const { title, description, text } = req.body;
 
   Tips.findByIdAndUpdate(
     tipid,
-    { title, description, content },
+    { title, description, text},
     { new: true }
     //{new : true} is used to get the updated document version returned after the update
   )

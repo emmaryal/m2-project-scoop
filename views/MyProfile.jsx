@@ -9,7 +9,7 @@ function MyProfile(props) {
           <p>Props.email:{props.user.email}</p>
         <a href={`/private/myprofile?userid=${props.user._id}`}>see more</a>
         <br />
-        <a href={`/private/mytipslist?userid=${props.user._id}`}>link to my tips list{props.user.userid}</a>
+        <a href={`/private/mytipslist?userid=${props.user._id}`}>link to my tips list{props.user._id}</a>
       </p>
       
     </Layout>

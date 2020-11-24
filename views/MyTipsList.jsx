@@ -10,8 +10,8 @@ function MyTipsList(props) {
       <Layout title="My List of Tips" user={props.user}>
     
         <h1>My List of Tips</h1>
-      {props.oneUser.createdtips ? 
-        (props.oneUser.createdtips.map((oneTip, i) => {
+      {props.oneUser.createdTips ? 
+        (props.oneUser.createdTips.map((oneTip, i) => {
           console.log("PROPS FOR MAPPING", props.tips)
          return (
            <div>

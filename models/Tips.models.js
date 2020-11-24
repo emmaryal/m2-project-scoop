@@ -18,6 +18,5 @@ const tipsSchema = new Schema(
 const Tips = mongoose.model("Tips", tipsSchema);
 
 
-
 // EXPORT THE MODEL
 module.exports = Tips;
