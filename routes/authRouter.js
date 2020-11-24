@@ -3,7 +3,7 @@ var authRouter = express.Router();
 
 const bcrypt = require("bcrypt");
 const User = require("./../models/User.model");
-//const zxcvbn = require("zxcvbn");
+const zxcvbn = require("zxcvbn");
 
 const isLoggedIn = require("./../utils/isLoggedIn");
 const saltRounds = 5;
@@ -80,7 +80,7 @@ authRouter.post("/signup", (req, res, next) => {
       }
 
 
-      if ( zxcvbn(password).score < 3  ) {
+   if ( zxcvbn(password).score < 3  ) {
         const suggestions = zxcvbn(password).feedback.suggestions;
        console.log('suggestions', suggestions);
        const props = {  errorMessage: suggestions[0] }  
@@ -95,7 +95,8 @@ authRouter.post("/signup", (req, res, next) => {
         .then((createdUser) => {
           console.log("created user :", createdUser);
           req.session.currentUser = email;
-          res.redirect("./../private/TipsList");
+         
+         res.redirect("./../private/TipsList");
         })
         .catch((err) => console.log(err));
     })

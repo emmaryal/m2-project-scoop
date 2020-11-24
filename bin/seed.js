@@ -7,12 +7,7 @@ const tips = require("./tips-mock-data");
 
 const DB_NAME = "DB_Scoop";
 
-mongoose
-  .connect(`mongodb://localhost:27017/${DB_NAME}`, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-  })
+git 
   .then((x) =>{
       const pr = x.connection.dropDatabase();
       return pr;
