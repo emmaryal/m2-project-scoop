@@ -24,18 +24,5 @@ siteRouter.get("/alltips", (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
-// GET ERROR PAGES
-siteRouter.get("/err404", (req, res, next) => {
-  res.sendFile(__dirname + "./../public/static/error404.html");
-});
-/*Finds a tip by id and renders tip detail
-  example: /tip/5fbad7569d1dde1fdffab6bc
- */
-siteRouter.get("/:id", async (req, res) => {
-  const tipId =  req.params.id;
-  const tip = await findTipById(tipId)
-  
-  res.render("TipDetail", tip);
-})
 
 module.exports = siteRouter;
