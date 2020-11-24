@@ -10,9 +10,6 @@ siteRouter.get("/", function (req, res, next) {
 
 /* GET search results page */
 
-// GET ERROR PAGES
-siteRouter.get("/err404", (req, res, next) => {
-  res.sendFile(__dirname + "./../public/static/error404.html");
-});
+
 
 module.exports = siteRouter;

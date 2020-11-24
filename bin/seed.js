@@ -10,12 +10,6 @@ const tips = require("./tips-mock-data");
 const DB_NAME = "DB_Scoop";
 
 
-
-
-
-
-
-
   mongoose
   .connect(
     process.env.MONGODB_URI,            //  <--- UPDATE
