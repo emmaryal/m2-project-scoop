@@ -3,17 +3,21 @@
 body {
   padding: 50px;
   font-family: 'Source Sans Pro', sans-serif;
-  background-color: #faaf00d3;
+  background-color: #6186ad;
   background-size: cover;
 }
 
+#claim{
+  margin-left: 25px;
+  margin-bottom: 30px;
+}
 /*search bar Home*/
   #search-bar {
     height: 100%;
     width: 100%;
     min-width: auto;
     font-family: 'Source Sans Pro', sans-serif;
-    color: #360c1280;
+    color: #ffffff;
     border-radius: 30px;
     background: transparent;
     text-decoration: none;
@@ -24,9 +28,9 @@ body {
 
 /* Search button Home*/
 button {
-  min-width: 120px;
-  top: 50%;
-  left: 50%;
+  min-width: 50px;
+  top: 40%;
+  left: 40%;
   padding: 16px 32px;
   margin: 24px 20px 0 0;
   border-radius: 30px;
@@ -34,7 +38,7 @@ button {
   text-decoration: none;
   border: 1px solid #4778ff80;
   outline: none;
-  color: #360c1280;
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -51,8 +55,8 @@ button {
 
   /**/
 button:hover {
-  background: #fff;
-  color: #43a3e6;
+  background: #4d36016b;
+  color: #c1c0c5;
   transition: 0.3s ease background;
 }
 
@@ -72,23 +76,25 @@ button:hover {
 body {
   padding: 50px;
   font-family: 'Source Sans Pro', sans-serif;
+  color: rgb(255, 255, 255)
 }
 
 .dropdown {
   margin-bottom: 50px;
   padding-top: 10px;
+  padding-left: 20px;
   font-size: large;
 }
 
 .form-wrapper {
   display: flex;
   flex-direction: column;
-  background-color: green;
-  border: black 10px;
+  background-color: #007bff88;
+  border-radius: 10px;
   margin:  auto;
   padding: 10px 20px;
-  width: 90vw;
-  height: 70vh;
+  width: 70vw;
+  height: 65vh;
   justify-content: center;
   align-items: center;
   

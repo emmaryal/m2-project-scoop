@@ -6,7 +6,7 @@ function Home() {
         <Layout title="Home Page">
          <div class="cover occupy-space" >
             <form id="form" action="/alltips" method="GET" class="flex-form" >
-            <h1>Zero waste lifestile tips</h1>
+            <h1 id="claim" >Zero waste lifestile tips</h1>
                 <input 
                 type="text" 
                 name="search" 
