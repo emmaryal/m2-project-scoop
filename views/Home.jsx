@@ -3,13 +3,25 @@ const Layout = require("./Layout");
 
 function Home() {
     return (
-        <Layout title="Home Page"  user={props.user}>
-            <form id="form" action="/alltips" method="GET">
-                <h1>Home Page</h1>
-
-                <input type="text" name="search" placeholder="Paper towel"/>
-                <button type="search">Find a Tip</button>
+        <Layout title="Home Page">
+         <div class="cover occupy-space" >
+            <form id="form" action="/alltips" method="GET" class="flex-form" >
+            <h1 id="claim" >Zero waste lifestile tips</h1>
+                <input 
+                type="text" 
+                name="search" 
+                id="search-bar" 
+                class="shadow" 
+                type="search"
+                placeholder="Paper towel"/>
+                <button type="submit"
+                id="search-button" 
+                class="shadow"
+                >
+                 Find a Tip
+                </button>
             </form>
+      </div>
         </Layout>
     );
 }
