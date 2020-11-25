@@ -4,8 +4,6 @@ const isLoggedIn = require("./../utils/isLoggedIn");
 const User = require("./../models/User.model");
 const Tips = require("./../models/Tips.models");
 
-// Your routes
-
 // GET /tips - render tips page
 privRouter.get("/myprofile", isLoggedIn, (req, res, next) => {
   const userid = req.session.currentUser._id;
@@ -27,17 +25,16 @@ privRouter.get("/createtip", isLoggedIn, (req, res, next) => {
 });
 
 //POST recieves the data from create tip form
-privRouter.post("/createtip", isLoggedIn,(req, res, next) => {
+privRouter.post("/createtip", isLoggedIn, (req, res, next) => {
   // Destructure the values coming from the POST form
   const { title, description, text } = req.body;
   const userId = req.session.currentUser._id;
-console.log("session id to add to createdby field:", userId)
+  console.log("session id to add to createdby field:", userId);
   Tips.create({ title, description, text, userId: userId })
     .then((tip) => {
-   
       const pr = User.findByIdAndUpdate(
         userId,
-        { $push: { createdTips: tip._id } }, 
+        { $push: { createdTips: tip._id } },
         { new: true }
       );
       return pr;
@@ -49,7 +46,7 @@ console.log("session id to add to createdby field:", userId)
 });
 
 privRouter.get(`/mytipslist`, isLoggedIn, (req, res, next) => {
-  const userid  = req.session.currentUser._id;
+  const userid = req.session.currentUser._id;
   User.findById(userid)
     .populate("createdTips") // this is the new line to populate
     .then((oneUser) => {
@@ -63,8 +60,7 @@ privRouter.get(`/mytipslist`, isLoggedIn, (req, res, next) => {
 
 //GET  /update tip -render update tip form
 privRouter.get("/tips/edit", isLoggedIn, (req, res, next) => {
-
-  const {tipid }  = req.query;
+  const { tipid } = req.query;
 
   // Find the specific tip by `_id`
   Tips.findOne({ _id: tipid })
@@ -76,7 +72,7 @@ privRouter.get("/tips/edit", isLoggedIn, (req, res, next) => {
 });
 
 // POST  /tips/update
-privRouter.post("/update",isLoggedIn ,(req, res, next) => {
+privRouter.post("/mytipslist", isLoggedIn, (req, res, next) => {
   const { tipid } = req.query;
   const { title, description, text } = req.body;
 
@@ -88,24 +84,38 @@ privRouter.post("/update",isLoggedIn ,(req, res, next) => {
   )
     .then((updatedTip) => {
       console.log("tip document after the update", updatedTip);
-      res.redirect("./../private/mytiplist");
+      res.redirect("./../private/mytipslist");
     })
     .catch((error) => console.error(error));
 });
-/*
-// DELETE /tips - delete or update a tip
-privRouter.get("/delete", isLoggedIn, (req, res, next) => {
-  const userid = req.session.currentUser._id;
+
+// DELETE /tips - delete a tip
+//GET  /delete tip -render delete tip form
+privRouter.get("/tips/delete", isLoggedIn, (req, res, next) => {
+  const { tipid } = req.query;
+
+  // Find the specific tip by `_id`
+  Tips.findOne({ _id: tipid })
+    .then((oneTip) => {
+      const props = { oneTip: oneTip };
+      res.render("DeleteTip", props);
+    })
+    .catch((err) => console.log(err));
+});
+
+privRouter.post("/delete", isLoggedIn, (req, res, next) => {
+  //const userid = req.session.currentUser._id;
   const { tipid } = req.query;
   const { title, description, text } = req.body;
-  Tips.findByIdAndRemove(tipid,
-    { title, description, text }
-     )
-    .then((updatedTip) => {
-      console.log("tip document after the update", updatedTip);
-      res.redirect("./../private/mytiplist");
+  Tips.findByIdAndRemove(
+    tipid, 
+    { title, description, text },
+    {new: true})
+    .then((deletedTip) => {
+      console.log("tip document after deletion", deletedTip);
+      res.redirect("./../private/mytipslist");
     })
     .catch((error) => console.error(error));
-}); */
+});
 
 module.exports = privRouter;
