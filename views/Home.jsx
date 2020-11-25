@@ -6,17 +6,17 @@ function Home(props) {
         <Layout title="Home Page">
          <div class="cover occupy-space" >
             <form id="form" action="/alltips" method="GET" class="flex-form" >
-            <h1 id="claim" >Zero waste lifestile tips</h1>
+            <h1 id="claim" >Zero waste lifestyle tips</h1>
                 <input 
                 type="text" 
                 name="search" 
                 id="search-bar" 
-                class="shadow" 
+                className="shadow" 
                 type="search"
                 placeholder="Paper towel"/>
                 <button type="submit"
                 id="search-button" 
-                class="shadow"
+                className="shadow"
                 >
                  Find a Tip
                 </button>

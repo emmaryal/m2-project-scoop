@@ -3,7 +3,7 @@ const React = require("react");
 const Layout = require("./Layout");
 
 function DeleteTip(props) {
-  console.log("props on update tips page: ", props);
+  
   return (
     <Layout title="Delete Tip">
       <h1>Delete a Tip</h1>
@@ -26,7 +26,7 @@ function DeleteTip(props) {
         <br />
 
         <button className="update-button" type="submit">
-          UPDATE
+          DELETE
         </button>
       </form>
     </Layout>

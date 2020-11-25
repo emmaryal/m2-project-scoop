@@ -83,7 +83,6 @@ privRouter.post("/mytipslist", isLoggedIn, (req, res, next) => {
     //{new : true} is used to get the updated document version returned after the update
   )
     .then((updatedTip) => {
-      console.log("tip document after the update", updatedTip);
       res.redirect("./../private/mytipslist");
     })
     .catch((error) => console.error(error));
@@ -103,16 +102,15 @@ privRouter.get("/tips/delete", isLoggedIn, (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
-privRouter.post("/delete", isLoggedIn, (req, res, next) => {
-  //const userid = req.session.currentUser._id;
+privRouter.post("/mytipslist", isLoggedIn, (req, res, next) => {
+  const userid = req.session.currentUser._id;
   const { tipid } = req.query;
   const { title, description, text } = req.body;
-  Tips.findByIdAndRemove(
-    tipid, 
+  Tips.findByIdAndDelete(
+    tipid ,
     { title, description, text },
-    {new: true})
+    {new: true} )
     .then((deletedTip) => {
-      console.log("tip document after deletion", deletedTip);
       res.redirect("./../private/mytipslist");
     })
     .catch((error) => console.error(error));
