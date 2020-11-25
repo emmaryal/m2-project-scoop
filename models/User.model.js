@@ -4,10 +4,10 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
     { 
-        email: {type: String, unique: true},
+        email: {type: String},
         name: {type: String},
-        password: {type: String, required: true}, 
-        
+        password: {type: String}, 
+        createdTips: [{type: Schema.Types.ObjectId, ref: "Tips" }],
         createdAt: {type: Date, required: true, default: Date.now()}
     }
     );

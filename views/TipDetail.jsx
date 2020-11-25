@@ -1,13 +1,19 @@
 const React = require("react");
+const Card = require("./components/Card");
 const Layout = require("./Layout");
 
-function Tips(props) {
+function TipDetail(props) {
+  <h1>Tip Detail</h1>
   return (
-    <Layout title="Top Tip" user={props.user}>
-      <h1>One  Tip</h1>
-      
-    </Layout>
+    <Layout  user={props.user}>
+      <Card 
+        image = {props.image}
+        title = {props.title}
+        description = {props.description}
+        text = {props.text}
+      />
+    </Layout>  
   );
 }
 
-module.exports = Tips;
+module.exports = TipDetail;

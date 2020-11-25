@@ -5,7 +5,7 @@ const Card = require("./components/Card");
 
 function Home() {
   return (
-    <Layout title="Home Page">
+    <Layout title="Home Page"  user={props.user}>
       <h1>Home Page</h1>
       <Card
         text="smaller component example"

@@ -1,9 +1,10 @@
 const React = require("react");
 const isLoggedIn = require("./../utils/isLoggedIn");
-
 function Layout(props) {
+  console.log ("props on Layout page:" , props);
+  console.log ("props.user on Layout page:" , props.user);
+  console.log ("isLoggedIn on layout: ", isLoggedIn);
   return (
-    /* also put the header menu here */
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
@@ -19,11 +20,9 @@ function Layout(props) {
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
           crossOrigin="anonymous"
         />
-
         <link rel="stylesheet" href="/stylesheets/style.css" />
         <link rel="stylesheet" href="/public/stylesheets/createtip.css" />
       </head>
-
       <body>
         <nav>
           <div className="dropdown">
@@ -38,19 +37,20 @@ function Layout(props) {
             >
               Menu
             </a>
-
             <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
               <a className="dropdown-item" href="/">
                 Home
               </a>
-              {props.user ? (null) : (
-              <a className="dropdown-item" href="/auth/login">
-                Login
-              </a>)}
-              {props.user ? (null) : (
-              <a className="dropdown-item" href="/auth/signup">
-                Signup
-              </a>)}
+              {props.user ? null : (
+                <a className="dropdown-item" href="/auth/login">
+                  Login
+                </a>
+              )}
+              {props.user ? null : (
+                <a className="dropdown-item" href="/auth/signup">
+                  Signup
+                </a>
+              )}
 
               {props.user ? (
                 <a className="dropdown-item" href="/private/tipslist">
@@ -61,7 +61,16 @@ function Layout(props) {
                   Login for private area
                 </a>
               )}
-
+              {props.user ? (
+                <a className="dropdown-item" href="/private/createtip">
+                  create tip
+                </a>
+              ) : null}
+              {props.user ? (
+                <a className="dropdown-item" href="/private/tips/edit">
+                  edit tip
+                </a>
+              ) : null}
               {props.user ? (
                 <a className="dropdown-item" href="/auth/logout">
                   Logout
@@ -90,5 +99,4 @@ function Layout(props) {
     </html>
   );
 }
-
 module.exports = Layout;
