@@ -27,7 +27,7 @@ privRouter.get("/createtip", isLoggedIn, (req, res, next) => {
 });
 
 //POST recieves the data from create tip form
-privRouter.post("/createtip", (req, res, next) => {
+privRouter.post("/createtip", isLoggedIn, (req, res, next) => {
   // Destructure the values coming from the POST form
   const { title, description, text } = req.body;
   const userId = req.session.currentUser._id;
