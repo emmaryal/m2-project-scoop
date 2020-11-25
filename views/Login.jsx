@@ -4,7 +4,7 @@ const Layout = require("./Layout");
 function Login(props) {
   return (
     <Layout title="Login Page" user={props.user}>
-      {console.log("props.user:", props.user)}
+      {console.log("props.user on login:", props.user)}
       <div className="form-wrapper">
         <form className="auth-form" action="/auth/login" method="POST">
           <input

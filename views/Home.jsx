@@ -1,7 +1,7 @@
 const React = require("react");
 const Layout = require("./Layout");
 
-function Home() {
+function Home(props) {
     return (
         <Layout title="Home Page"  user={props.user}>
             <form id="form" action="/alltips" method="GET">

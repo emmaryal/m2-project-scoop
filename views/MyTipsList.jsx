@@ -13,12 +13,14 @@ function MyTipsList(props) {
         <h1>My List of Tips</h1>
       {props.oneUser.createdTips !== [] ? 
         (props.oneUser.createdTips.map((oneTip, i) => {
-          console.log("PROPS FOR MAPPING", props.oneUser)
+          //console.log("PROPS FOR MAPPING", props.oneUser)
          return (
            <div>
              <h3 key={i}>{oneTip.title}</h3>
              <p>{oneTip.description}</p>
              <p>{oneTip.text}</p>
+             <a href={`/private/tips/edit/:${oneTip.id}`}>edit this tip</a>
+           <p>{oneTip.id}</p>
            </div>
          )}))
          :
