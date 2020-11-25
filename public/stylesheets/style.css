@@ -3,20 +3,36 @@
 body {
   padding: 50px;
   font-family: 'Source Sans Pro', sans-serif;
+  background-color: #faaf00d3;
+  background-size: cover;
 }
 
+/*search bar Home*/
+  #search-bar {
+    height: 100%;
+    width: 100%;
+    min-width: auto;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #360c1280;
+    border-radius: 30px;
+    background: transparent;
+    text-decoration: none;
+    border: 1px solid #4778ff80;
+    outline: none;
+    cursor: pointer; 
+  }
 
-/* button Home*/
+/* Search button Home*/
 button {
   min-width: 120px;
   top: 50%;
   left: 50%;
   padding: 16px 32px;
-  margin: 24px 8px 0 0;
-  border-radius: 25px;
+  margin: 24px 20px 0 0;
+  border-radius: 30px;
   background: transparent;
   text-decoration: none;
-  border: 1px solid #d7385180;
+  border: 1px solid #4778ff80;
   outline: none;
   color: #360c1280;
   cursor: pointer;
@@ -29,60 +45,11 @@ button {
 
 @media (max-width: 620px) {
   button {
-    width: 100%;
+    width: 80%;
     min-width: auto;
   }
 
-  /*search bar Home*/
-  .flex-form input[type="submit"] {
-  background: #d7385080;
-  border: none;
-  border-radius:100px;
-  color: #fff;
-  padding: 0 30px;
-  cursor: pointer;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  transition: all 0.2s;
-}
-
-.flex-form input[type="submit"]:hover {
-  background: #d7385180;
-  border: 1px solid #d7385180;
-}
-
-.flex-form {
-  display: -webkit-box;
-  display: flex;
-  z-index: 10;
-  position: relative;
-  width: 500px;
-  border-radius:35px;
-}
-
-.flex-form > * {
-  border: 0;
-  padding: 0 0 0 10px;
-  background: #fff;
-  line-height: 50px;
-  font-size: 1rem;
-  border-radius: 0;
-  outline: 0;
-  -webkit-appearance: none;
-}
-
-input[type="search"] {
-  flex-basis: 500px;
-}
-
-  #search-bar {
-    border-radius: 100px;
-    margin-right: 3%;
-    font-family: 'Source Sans Pro', sans-serif;
-    color: #444444f3; 
-  }
-
-  /*search bar and button Home*/
+  /**/
 button:hover {
   background: #fff;
   color: #43a3e6;
