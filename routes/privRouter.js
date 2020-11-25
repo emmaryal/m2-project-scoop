@@ -43,7 +43,7 @@ console.log("session id to add to createdby field:", userId)
       return pr;
     })
     .then((updatedUser) => {
-      res.redirect(`/private/myprofile/`);
+      res.redirect(`/private/myprofile`);
     })
     .catch((error) => console.log(error));
 });
