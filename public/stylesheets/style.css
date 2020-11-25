@@ -2,26 +2,87 @@
 
 body {
   padding: 50px;
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 
-
+/* button Home*/
 button {
-  background: white;
-  border: 1px solid grey;
-  border-radius: 4px;
-  color: black;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 14px;
-  padding: 8px 16px;
+  min-width: 120px;
+  top: 50%;
+  left: 50%;
+  padding: 16px 32px;
+  margin: 24px 8px 0 0;
+  border-radius: 25px;
+  background: transparent;
   text-decoration: none;
-  text-transform: uppercase;
-  transition: 0.3s ease background;
-  width: 100%;
+  border: 1px solid #d7385180;
+  outline: none;
+  color: #360c1280;
+  cursor: pointer;
 }
 
+.disabled {
+  opacity: .4;
+  cursor: auto;
+}
+
+@media (max-width: 620px) {
+  button {
+    width: 100%;
+    min-width: auto;
+  }
+
+  /*search bar Home*/
+  .flex-form input[type="submit"] {
+  background: #d7385080;
+  border: none;
+  border-radius:100px;
+  color: #fff;
+  padding: 0 30px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.flex-form input[type="submit"]:hover {
+  background: #d7385180;
+  border: 1px solid #d7385180;
+}
+
+.flex-form {
+  display: -webkit-box;
+  display: flex;
+  z-index: 10;
+  position: relative;
+  width: 500px;
+  border-radius:35px;
+}
+
+.flex-form > * {
+  border: 0;
+  padding: 0 0 0 10px;
+  background: #fff;
+  line-height: 50px;
+  font-size: 1rem;
+  border-radius: 0;
+  outline: 0;
+  -webkit-appearance: none;
+}
+
+input[type="search"] {
+  flex-basis: 500px;
+}
+
+  #search-bar {
+    border-radius: 100px;
+    margin-right: 3%;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #444444f3; 
+  }
+
+  /*search bar and button Home*/
 button:hover {
   background: #fff;
   color: #43a3e6;
@@ -43,8 +104,7 @@ button:hover {
 
 body {
   padding: 50px;
-  font-family: 'Amatic SC', cursive;
-  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .dropdown {
@@ -81,7 +141,7 @@ body {
   font-size: large;
   padding: 10px;
   margin: 5px;
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Source Sans Pro', sans-serif;
   width: 60%;
 }
 
@@ -90,7 +150,7 @@ input  {
   font-size: large;
   padding: 10px;
   margin: 5px;
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
   width: 60%;
 }
@@ -122,5 +182,5 @@ li {
 .dropdown {
   font-size: 30px;
   padding-top: 15px;
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Source Sans Pro', sans-serif;
 }
