@@ -27,7 +27,11 @@ privRouter.get("/createtip", isLoggedIn, (req, res, next) => {
 });
 
 //POST recieves the data from create tip form
+<<<<<<< HEAD
 privRouter.post("/createtip", isLoggedIn, (req, res, next) => {
+=======
+privRouter.post("/createtip", isLoggedIn,(req, res, next) => {
+>>>>>>> develop
   // Destructure the values coming from the POST form
   const { title, description, text } = req.body;
   const userId = req.session.currentUser._id;
@@ -62,10 +66,8 @@ privRouter.get(`/mytipslist`, isLoggedIn, (req, res, next) => {
 });
 
 //GET  /update tip -render update tip form
-//res.redirect(`/private/mytipslist/${updatedUser._id}`);
-privRouter.get("/tips/edit/:tipid", (req, res, next) => {
-  // Get the tipid passed via the link.
-  // Example:    <a href="/tips/edit?tipid=123">
+privRouter.get("/tips/edit", isLoggedIn, (req, res, next) => {
+
   const {tipid }  = req.query;
 
   // Find the specific tip by `_id`
@@ -78,7 +80,7 @@ privRouter.get("/tips/edit/:tipid", (req, res, next) => {
 });
 
 // POST  /tips/update
-privRouter.post("/update", (req, res, next) => {
+privRouter.post("/update",isLoggedIn ,(req, res, next) => {
   const { tipid } = req.query;
   const { title, description, text } = req.body;
 
@@ -94,16 +96,20 @@ privRouter.post("/update", (req, res, next) => {
     })
     .catch((error) => console.error(error));
 });
-
+/*
 // DELETE /tips - delete or update a tip
-privRouter.get("/update", isLoggedIn, (req, res, next) => {
+privRouter.get("/delete", isLoggedIn, (req, res, next) => {
   const userid = req.session.currentUser._id;
-  User.findById(userid)
-    .then((user) => {
-      const props = { user: user };
-      res.render("UpdateTip", props);
+  const { tipid } = req.query;
+  const { title, description, text } = req.body;
+  Tips.findByIdAndRemove(tipid,
+    { title, description, text }
+     )
+    .then((updatedTip) => {
+      console.log("tip document after the update", updatedTip);
+      res.redirect("./../private/mytiplist");
     })
-    .catch((err) => console.log(err));
-});
+    .catch((error) => console.error(error));
+}); */
 
 module.exports = privRouter;

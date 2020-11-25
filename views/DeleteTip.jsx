@@ -2,17 +2,16 @@ const { PromiseProvider } = require("mongoose");
 const React = require("react");
 const Layout = require("./Layout");
 
-function UpdateTip(props) {
+function DeleteTip(props) {
   console.log("props on update tips page: ", props);
   return (
   
-    <Layout title="UpdateTip" user={props.user}>
+    <Layout title="Delete Tip">
 
-      <h1>Update a Tip</h1>
+      <h1>Delete a Tip</h1>
 
-      {/*<form action={`./tips/edit?tipid=${props.oneTip._id}`} method="POST">*/}
-       <form action={`./../../mytipslist`} method="POST">
-        <label>Title:</label>
+      <form action={`./../private/mytipslist`} method="POST">
+      <label>Title:</label>
        <input type="text" name="title" value={props.oneTip.title}/>
         <br />
 
@@ -33,4 +32,4 @@ function UpdateTip(props) {
   );
 }
 
-module.exports = UpdateTip;
+module.exports = DeleteTip;

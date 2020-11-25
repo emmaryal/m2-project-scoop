@@ -26,7 +26,21 @@ siteRouter.get("/alltips", (req, res, next) => {
 
 
 
+/* GET search details page */
+siteRouter.get("/tipdetail", (req, res, next) => {
+  const {tipid }  = req.query;
 
+  // Find the specific tip by `_id`
+  Tips.findOne({ _id: tipid })
+    .then((oneTip) => {
+      const props = { oneTip: oneTip };
+      res.render("TipDetail", props);
+    })
+    .catch((err) => console.log(err));
+});
+
+
+ 
 // GET ERROR PAGES
 //siteRouter.get("/err404", (req, res, next) => {
 //  res.sendFile(__dirname + "./../public/static/error404.html");

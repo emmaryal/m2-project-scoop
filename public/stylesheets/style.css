@@ -2,29 +2,61 @@
 
 body {
   padding: 50px;
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #6186ad;
+  background-size: cover;
 }
 
+#claim{
+  margin-left: 25px;
+  margin-bottom: 30px;
+}
+/*search bar Home*/
+  #search-bar {
+    height: 100%;
+    width: 100%;
+    min-width: auto;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #ffffff;
+    border-radius: 30px;
+    background: transparent;
+    text-decoration: none;
+    border: 1px solid #4778ff80;
+    outline: none;
+    cursor: pointer; 
+  }
 
-
+/* Search button Home*/
 button {
-  background: white;
-  border: 1px solid grey;
-  border-radius: 4px;
-  color: black;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 14px;
-  padding: 8px 16px;
+  min-width: 50px;
+  top: 40%;
+  left: 40%;
+  padding: 16px 32px;
+  margin: 24px 20px 0 0;
+  border-radius: 30px;
+  background: transparent;
   text-decoration: none;
-  text-transform: uppercase;
-  transition: 0.3s ease background;
-  width: 100%;
+  border: 1px solid #4778ff80;
+  outline: none;
+  color: #ffffff;
+  cursor: pointer;
 }
 
+.disabled {
+  opacity: .4;
+  cursor: auto;
+}
+
+@media (max-width: 620px) {
+  button {
+    width: 80%;
+    min-width: auto;
+  }
+
+  /**/
 button:hover {
-  background: #fff;
-  color: #43a3e6;
+  background: #4d36016b;
+  color: #c1c0c5;
   transition: 0.3s ease background;
 }
 
@@ -43,25 +75,26 @@ button:hover {
 
 body {
   padding: 50px;
-  font-family: 'Amatic SC', cursive;
-  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+  font-family: 'Source Sans Pro', sans-serif;
+  color: rgb(255, 255, 255)
 }
 
 .dropdown {
   margin-bottom: 50px;
   padding-top: 10px;
+  padding-left: 20px;
   font-size: large;
 }
 
 .form-wrapper {
   display: flex;
   flex-direction: column;
-  background-color: green;
-  border: black 10px;
+  background-color: #007bff88;
+  border-radius: 10px;
   margin:  auto;
   padding: 10px 20px;
-  width: 90vw;
-  height: 70vh;
+  width: 70vw;
+  height: 65vh;
   justify-content: center;
   align-items: center;
   
@@ -81,7 +114,7 @@ body {
   font-size: large;
   padding: 10px;
   margin: 5px;
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Source Sans Pro', sans-serif;
   width: 60%;
 }
 
@@ -90,7 +123,7 @@ input  {
   font-size: large;
   padding: 10px;
   margin: 5px;
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
   width: 60%;
 }
@@ -122,5 +155,5 @@ li {
 .dropdown {
   font-size: 30px;
   padding-top: 15px;
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Source Sans Pro', sans-serif;
 }
