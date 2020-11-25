@@ -4,7 +4,7 @@ const Layout = require("./Layout");
 
 function CreateTip(props) {
   return (
-    <Layout title="Create Tip">
+    <Layout title="Create Tip"  user={props.user}>
 
       <h1>Create new Tip</h1>
 

@@ -5,7 +5,7 @@ const Layout = require("./Layout");
 function TipDetail(props) {
   <h1>Tip Detail</h1>
   return (
-    <Layout>
+    <Layout  user={props.user}>
       <Card 
         image = {props.image}
         title = {props.title}

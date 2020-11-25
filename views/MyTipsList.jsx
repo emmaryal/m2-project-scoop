@@ -1,6 +1,7 @@
 const React = require("react");
 const Layout = require("./Layout");
 const Profile = require("./MyProfile");
+const Tips = require ("./../models/Tips.models")
 
 
 
@@ -10,14 +11,14 @@ function MyTipsList(props) {
       <Layout title="My List of Tips" user={props.user}>
     
         <h1>My List of Tips</h1>
-      {props.oneUser.createdTips ? 
+      {props.oneUser.createdTips !== [] ? 
         (props.oneUser.createdTips.map((oneTip, i) => {
-          console.log("PROPS FOR MAPPING", props.tips)
+          console.log("PROPS FOR MAPPING", props.oneUser)
          return (
            <div>
-             <h3 key={i}>{tip.title}</h3>
-             <p>{tip.description}</p>
-             <p>{tip.text}</p>
+             <h3 key={i}>{oneTip.title}</h3>
+             <p>{oneTip.description}</p>
+             <p>{oneTip.text}</p>
            </div>
          )}))
          :

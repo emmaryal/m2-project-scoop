@@ -28,7 +28,7 @@ authRouter.post("/login", (req, res, next) => {
     const passwordCorrect = bcrypt.compareSync(password, email.password);
     if (passwordCorrect) {
       // Create the session - which also triggers the creation of the cookie
-      req.session.currentUser = email;
+      req.session.currentUser = email; //???? is this the session?
       console.log("current user email", { email: email });
 
       res.redirect("./../private/createtip");
@@ -72,9 +72,9 @@ authRouter.post("/signup", (req, res, next) => {
       const salt = bcrypt.genSaltSync(saltRounds);
       const hashedPassword = bcrypt.hashSync(password, salt);
       User.create({ email: email, password: hashedPassword })
-        .then((createdUser) => {
-          console.log("created user :", createdUser);
-          req.session.currentUser = email;
+        .then((createdSession) => {
+          console.log("created user :", createdSession);
+          req.session.currentUser = email;          //session should be created here!!!!!!!
 
           res.redirect("./../private/createtip");
         })
