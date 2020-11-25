@@ -19,8 +19,10 @@ function MyTipsList(props) {
              <h3 key={i}>{oneTip.title}</h3>
              <p>{oneTip.description}</p>
              <p>{oneTip.text}</p>
-             <a href={`/private/tips/edit/:${oneTip.id}`}>edit this tip</a>
-           <p>{oneTip.id}</p>
+             <a href={`/private/tips/edit/?tipid=${oneTip.id}`}>edit this tip</a>
+             <br />
+             <a href={`/private/tips/delete/tipid=${oneTip.id}`}>delete this tip</a>
+           {/* <p>{oneTip.id}</p> */}
            </div>
          )}))
          :
