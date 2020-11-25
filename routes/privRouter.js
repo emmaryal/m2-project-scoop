@@ -34,12 +34,7 @@ privRouter.post("/createtip", (req, res, next) => {
 console.log("session id to add to createdby field:", userId)
   Tips.create({ title, description, text, userId: userId })
     .then((tip) => {
-      //      res.redirect("./../private/mytipslist");
-      //      //res.redirect("/alltips");
-      //    })
-      //    .catch((err) => console.log(err));
-      //});
-      //all this below is from authorsrouter
+   
       const pr = User.findByIdAndUpdate(
         userId,
         { $push: { createdTips: tip._id } }, 
@@ -71,7 +66,7 @@ privRouter.get(`/mytipslist`, isLoggedIn, (req, res, next) => {
 privRouter.get("/tips/edit/:tipid", (req, res, next) => {
   // Get the tipid passed via the link.
   // Example:    <a href="/tips/edit?tipid=123">
-  const { tipid } = req.query;
+  const {tipid }  = req.query;
 
   // Find the specific tip by `_id`
   Tips.findOne({ _id: tipid })
