@@ -3,12 +3,12 @@ const User = require("./../models/User.model");
 const Tips = require("./../models/Tips.models");
 const users = require("./users-mock-data");
 const tips = require("./tips-mock-data");
-const DB_NAME = "DB_Scoop";
+//const DB_NAME = "DB_Scoop";
 mongoose
-  .connect(`mongodb://localhost:27017/${DB_NAME}`, {
+ 
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: false,
   })
   .then((x) => {
     const pr = x.connection.dropDatabase();
