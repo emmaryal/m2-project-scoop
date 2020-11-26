@@ -2,10 +2,10 @@ var express = require("express");
 var siteRouter = express.Router();
 var Tips = require("./../models/Tips.models");
 
+
 /* GET home page. */
 siteRouter.get("/", function (req, res, next) {
-  res.render("Home", { title: "SCOOP" });
-});
+  res.render("Home", { title: "SCOOP" });});
 
 /* GET search results page */
 siteRouter.get("/alltips", (req, res, next) => {

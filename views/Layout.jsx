@@ -60,6 +60,13 @@ function Layout(props) {
             )*/}
             
             {props.user ? (
+              <a className="dropdown-item" href="/private/myprofile">
+                My profile
+              </a>
+            ) : null}
+
+
+            {props.user ? (
               <a className="dropdown-item" href="/private/createtip">
                 Create a Tip
               </a>
