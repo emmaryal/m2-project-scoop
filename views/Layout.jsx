@@ -50,7 +50,7 @@ function Layout(props) {
               </a>
             )}
 
-            {props.user ? (
+            {/*props.user ? (
               <a className="dropdown-item" href="/private/tipslist">
                 My private area
               </a>
@@ -58,17 +58,17 @@ function Layout(props) {
               <a className="dropdown-item" href="/auth/login">
                 Login for private area
               </a>
-            )}
+            )*/}
             
             {props.user ? (
               <a className="dropdown-item" href="/private/createtip">
-                Create tip
+                Create a Tip
               </a>
             ) : null}
 
             {props.user ? (
-              <a className="dropdown-item" href="/private/tips/edit">
-                Edit tip
+              <a className="dropdown-item" href="/private/mytipslist">
+                Edit or Delete a Tip
               </a>
             ) : null}
 

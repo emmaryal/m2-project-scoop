@@ -19,10 +19,13 @@ function MyTipsList(props) {
              <h3 key={i}>{oneTip.title}</h3>
              <p>{oneTip.description}</p>
              <p>{oneTip.text}</p>
+             
              <a href={`/private/tips/edit/?tipid=${oneTip.id}`}>edit this tip</a>
              <br />
-             <a href={`/private/tips/delete/?tipid=${oneTip.id}`}>delete this tip</a>
+             <form action={`/private/tips/delete/?tipid=${oneTip.id}`} method="POST">
+             <button type = "submit" >delete this tip</button>
            {/* <p>{oneTip.id}</p> */}
+           </form>
            </div>
          )}))
          :

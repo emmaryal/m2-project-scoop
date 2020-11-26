@@ -31,7 +31,7 @@ authRouter.post("/login", (req, res, next) => {
       req.session.currentUser = email; //???? is this the session?
       console.log("current user email", { email: email });
 
-      res.redirect("./../private/createtip");
+      res.redirect("./../private/myprofile");
     } else {
       res.render("Login", { errorMessage: "Incorrect password" });
     }
