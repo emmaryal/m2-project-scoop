@@ -73,9 +73,9 @@ app.get("/", (req, res, next) => {
 // Handle 404 - Keep this as a last route
 app.use(function(req, res, next) {
   res.status(404);
-  res.render("./views/Error404")
+  //res.render("./views/Error404")
   
-  //res.send('WHOOPSY! 404: File Not Found');
+  res.send('WHOOPSY! 404: File Not Found');
 });
 
 app.use(function(req, res, next) {
