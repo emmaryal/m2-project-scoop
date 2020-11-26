@@ -6,7 +6,7 @@ function AllTips(props) {
   return (
     <Layout title="Tips for Zero Waste Living" user={props.user}>
      <div className="results-background full-height">
-      <h1>Top Tips for Zero Waste Living</h1>
+      <h1 id="claim">Top Tips for Zero Waste Living</h1>
       {props.tips.map((tip, i) => {
         return (
           <Card
