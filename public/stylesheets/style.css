@@ -184,6 +184,7 @@ li {
     padding-left: 10px;
   }
   .posts-box {
+    position: absolute;
     max-width: 1024px;
     margin: 0 auto;
     padding: 20px 10px;
@@ -191,6 +192,7 @@ li {
     list-style: none;
   }
   .posts-box li {
+    position: absolute;
     display: inline-block;
     width: 320px;
     max-width: 100%;
@@ -198,6 +200,7 @@ li {
     vertical-align: top;
   }
   .card {
+
     padding-left: 30px;
     text-align: left;
     border-radius: 2px;
@@ -211,6 +214,7 @@ li {
     width: 100%;
   }
   .card div {
+    position: relative;
     padding: 16px 20px;
     border-bottom: 1px solid #EEEEEE;
   }
