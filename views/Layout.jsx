@@ -2,7 +2,7 @@ const React = require("react");
 const isLoggedIn = require("./../utils/isLoggedIn");
 function Layout(props) {
   console.log ("props on Layout page:" , props);
-  console.log ("props.user on Layout page:" , props.user);
+  //console.log ("props.user on Layout page:" , props.user);
   console.log ("isLoggedIn on layout: ", isLoggedIn);
   return (
     <html lang="en">
@@ -19,7 +19,6 @@ function Layout(props) {
           crossOrigin="anonymous"
         />
         <link rel="stylesheet" href="/stylesheets/style.css" />
-        <link rel="stylesheet" href="/public/stylesheets/createtip.css" />
       </head>
       <body>
         <nav>

@@ -1,16 +1,17 @@
 
-
 body {
-  padding: 50px;
   font-family: 'Source Sans Pro', sans-serif;
-  background-color: #6186ad;
+  background-color: #FFFFFF;
   background-size: cover;
+  color: black;
+  height: 100%;
 }
 
 #claim{
   margin-left: 25px;
   margin-bottom: 30px;
 }
+
 /*search bar Home*/
   #search-bar {
     height: 100%;
@@ -47,17 +48,43 @@ button {
   cursor: auto;
 }
 
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cover-image {
+  background-image: url('https://www.esciupfnews.com/wp-content/uploads/2020/01/zero-waste-1024x576.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.full-height {
+  height: 100vh;
+}
+
 @media (max-width: 620px) {
   button {
     width: 80%;
     min-width: auto;
   }
 
+.results-background {
+  background-image:
+}
+
   /**/
 button:hover {
   background: #4d36016b;
   color: #c1c0c5;
   transition: 0.3s ease background;
+  -webkit-transition: 0.3s ease background;
+  -moz-transition: 0.3s ease background;
+  -ms-transition: 0.3s ease background;
+  -o-transition: 0.3s ease background;
 }
 
 .error-message {
@@ -71,12 +98,6 @@ button:hover {
   margin: 20px auto;
   padding: 20px;
   width: 100%;
-}
-
-body {
-  padding: 50px;
-  font-family: 'Source Sans Pro', sans-serif;
-  color: rgb(255, 255, 255)
 }
 
 .dropdown {
@@ -157,7 +178,33 @@ li {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+.tip-title{
+  font-size: 1.75rem;
+  display: flex;
+  padding-left: 15px;
+  padding-top: 40px;
+  padding-bottom: 5px;
+  box-sizing: content-box;
+}
+.tip-subtitle {
+  font-size: 1.2rem;
+  font-style: italic;
+  display: flex;
+  padding-left: 15px;
+  padding-bottom: 40px;
+  box-sizing: content-box;
+}
+
   /* Cards */
+
+  }
+  .tip-text{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom-left-radius: inherit;
+    padding-left: 10px;
+  }
   .posts-box {
     max-width: 1024px;
     margin: 0 auto;
@@ -175,6 +222,7 @@ li {
   }
   
   .card {
+    padding-left: 30px;
     text-align: left;
     border-radius: 2px;
     background: #FFFFFF;
@@ -193,27 +241,12 @@ li {
     border-bottom: 1px solid #EEEEEE;
   }
   
-  .card div h3 {
+  .card-div-h3 {
+    margin: 8px 0;
+    font-size: 2.5m;
+  }
+  
+  .card-div-p {
     margin: 8px 0;
     font-size: .9em;
-  }
-  
-  .card div p {
-    margin: 8px 0;
-    font-size: .9em;
-  }
-  
-  .button {
-    color: #d7385180;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: .8em;
-  }
-  
-  .button:hover {
-    opacity: .7;
-  }
-
-  .description {
-    font-weight: lighter
   }

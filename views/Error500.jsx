@@ -1,0 +1,1 @@
+<img src="public/images/error-500-header.jpg" alt="Internal server error">

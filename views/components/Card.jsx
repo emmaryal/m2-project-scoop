@@ -1,42 +1,14 @@
 const React = require("react");
 
 function Card(props) {
+  console.log("card", props)
   return (
-    <div id="search-results" class="container occupy-space">
-      <h3>Tip</h3> 
-      <ul class="posts-box">
-        <p>{props.title}</p>
-        <p>{props.description}</p>
-      </ul>
-      <div class="modal" id="modal-name">
-        <div class="modal-sandbox"></div>
-          <div class="modal-box">
-            <div class="modal-header">
-              <img src="" class="inner-img" alt=""/>
-            </div>
-            <div class="modal" id="modal-name">
-              <div class="modal-sandbox"></div>
-              <div class="modal-box">
-                <div class="modal-header">
-                  <img src="" class="inner-img" alt=""/>
-                </div>
-                <div class="modal-body">
-                  <h2 class="inner-title"></h2>
-                  <div class="inner-text"></div>
-                  <button class="prev-post">Previous</button>
-                  <button class="next-post">Next</button>
-                  <button class="close-post">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
+    <div id="tip" className=" post-box post-box-li card">
+      <h4 className="tip-title card-tip-h3">{props.title}</h4> 
+      <p className="tip-text card-div-p" >{props.description}</p>
     </div>
   );
 }
-
-
-
 
 
 module.exports = Card;

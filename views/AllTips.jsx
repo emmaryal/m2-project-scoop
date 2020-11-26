@@ -4,18 +4,19 @@ const Card = require("./components/Card");
 
 function AllTips(props) {
   return (
-    <Layout title="All Our Tips" user={props.user}>
-      <h1>List of Tips</h1>
+    <Layout title="Tips for Zero Waste Living" user={props.user}>
+     <div className="results-background full-height">
+      <h1>Top Tips for Zero Waste Living</h1>
       {props.tips.map((tip, i) => {
-        console.log(props.tips);
         return (
-          <div>
-            <h3 key={i}>{tip.title}</h3>
-            <p>{tip.description}</p>
-            <p>{tip.text}</p>
-          </div>
+          <Card
+            title = {tip.title}
+            description = {tip.description}
+            text = {tip.text}
+          />
         );
       })}
+     </div>
     </Layout>
   );
 }

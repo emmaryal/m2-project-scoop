@@ -6,11 +6,11 @@ const Tips = require ("./../models/Tips.models")
 
 
 function MyTipsList(props) {
-  console.log("props on tips list page: ", props);
+  //console.log("props on tips list page: ", props);
     return (
-      <Layout title="My List of Tips" user={props.user}>
+      <Layout title="My Tips" user={props.user}>
     
-        <h1>My List of Tips</h1>
+        <h1>My Tips</h1>
       {props.oneUser.createdTips !== [] ? 
         (props.oneUser.createdTips.map((oneTip, i) => {
           console.log("PROPS FOR MAPPING", props.oneUser)

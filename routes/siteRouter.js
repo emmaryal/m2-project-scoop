@@ -19,12 +19,24 @@ siteRouter.get("/alltips", (req, res, next) => {
     .then((allTipsFromDB) => {
       const props = { tips: allTipsFromDB };
       res.render("AllTips", props);
-      console.log(Tips);
+    //  console.log(Tips);
     })
     .catch((err) => console.log(err));
 });
 
+/* GET search details page */
+siteRouter.get("/tipdetail", (req, res, next) => {
+  const {tipid }  = req.query;
 
+  // Find the specific tip by `_id`
+  Tips.findOne({ _id: tipid })
+    .then((oneTip) => {
+      const props = { oneTip: oneTip };
+      console.log("findone", props)
+      res.render("TipDetail", props);
+    })
+    .catch((err) => console.log(err));
+});
 
 
 // GET ERROR PAGES

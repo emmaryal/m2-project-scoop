@@ -15,7 +15,7 @@ privRouter.get("/myprofile", isLoggedIn, (req, res, next) => {
     .then((oneUser) => {
       const userObj = { user: oneUser };
       const props = userObj;
-      console.log("props user object: ", props);
+    //  console.log("props user object: ", props);
       res.render("MyProfile", props);
     })
     .catch((err) => console.log(err));
@@ -60,7 +60,7 @@ privRouter.get(`/mytipslist`, isLoggedIn, (req, res, next) => {
     .then((oneUser) => {
       const props = { oneUser: oneUser };
 
-      console.log("props my tips list", props);
+     // console.log("props my tips list", props);
       res.render("MyTipsList", props);
     })
     .catch((err) => console.log(err));
