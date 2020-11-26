@@ -6,13 +6,7 @@ function TipDetail(props) {
   console.log("props from alltips to tip detail page", props)
   
   return (
-    
-    <Layout  user={props.user}>
-      <h1>Tip Detail</h1>
-      <h3>{props.oneTip.title}</h3>
-     <p>{props.oneTip.description}</p>
-      <p>{props.oneTip.text}</p> 
-      
+    <Layout>
       <Card 
         image = {props.image}
         title = {props.title}

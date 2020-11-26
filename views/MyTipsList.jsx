@@ -6,23 +6,27 @@ const Tips = require ("./../models/Tips.models")
 
 
 function MyTipsList(props) {
-  console.log("props on tips list page: ", props);
+  
     return (
       <Layout title="My List of Tips" user={props.user}>
     
         <h1>My List of Tips</h1>
-      {props.oneUser.createdTips !== [] ? 
-        (props.oneUser.createdTips.map((oneTip, i) => {
-          //console.log("PROPS FOR MAPPING", props.oneUser)
+     
+        {props.user.createdTips !== [] ? 
+          (props.user.createdTips.map((oneTip, i) => {
+
          return (
            <div>
              <h3 key={i}>{oneTip.title}</h3>
              <p>{oneTip.description}</p>
              <p>{oneTip.text}</p>
+             
              <a href={`/private/tips/edit/?tipid=${oneTip.id}`}>edit this tip</a>
              <br />
-             <a href={`/private/tips/delete/tipid=${oneTip.id}`}>delete this tip</a>
+             <form action={`/private/tips/delete/?tipid=${oneTip.id}`} method="POST">
+             <button type = "submit" >delete this tip</button>
            {/* <p>{oneTip.id}</p> */}
+           </form>
            </div>
          )}))
          :

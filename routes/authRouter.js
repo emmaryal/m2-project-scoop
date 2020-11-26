@@ -31,7 +31,7 @@ authRouter.post("/login", (req, res, next) => {
       req.session.currentUser = email; //???? is this the session?
       console.log("current user email", { email: email });
 
-      res.redirect("./../private/createtip");
+      res.redirect("./../private/myprofile");
     } else {
       res.render("Login", { errorMessage: "Incorrect password" });
     }
@@ -39,8 +39,18 @@ authRouter.post("/login", (req, res, next) => {
 });
 // GET signup - render signup page
 authRouter.get("/signup", (req, res, next) => {
-  res.render("Signup");
+  const userid = req.session.currentUser._id;
+
+  User.findById(userid)
+    .then((oneUser) => {
+      const userObj = { user: oneUser };
+      const props = userObj;
+     
+      res.render("Signup", props);
+    })
+    .catch((err) => console.log(err));
 });
+  
 // POST signup
 authRouter.post("/signup", (req, res, next) => {
   const { email, password, repeatpassword } = req.body;

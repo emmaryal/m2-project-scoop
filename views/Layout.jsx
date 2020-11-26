@@ -1,15 +1,7 @@
 const React = require("react");
 const isLoggedIn = require("./../utils/isLoggedIn");
 function Layout(props) {
-  console.log("props on Layout page:", props);
-  console.log(
-    "props.userid on Layout page:",
-    props.user,
-    props.userid,
-    props.userId
-  );
-  console.log("isLoggedIn on layout: ", isLoggedIn);
-
+  
   return (
     <html lang="en">
       <head>
@@ -58,7 +50,7 @@ function Layout(props) {
               </a>
             )}
 
-            {props.user ? (
+            {/*props.user ? (
               <a className="dropdown-item" href="/private/tipslist">
                 My private area
               </a>
@@ -66,17 +58,24 @@ function Layout(props) {
               <a className="dropdown-item" href="/auth/login">
                 Login for private area
               </a>
-            )}
+            )*/}
             
             {props.user ? (
+              <a className="dropdown-item" href="/private/myprofile">
+                My profile
+              </a>
+            ) : null}
+
+
+            {props.user ? (
               <a className="dropdown-item" href="/private/createtip">
-                Create tip
+                Create a Tip
               </a>
             ) : null}
 
             {props.user ? (
-              <a className="dropdown-item" href="/private/tips/edit">
-                Edit tip
+              <a className="dropdown-item" href="/private/mytipslist">
+                Edit or Delete a Tip
               </a>
             ) : null}
 
