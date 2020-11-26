@@ -62,7 +62,11 @@ privRouter.get(`/mytipslist`, isLoggedIn, (req, res, next) => {
   User.findById(userid)
     .populate("createdTips") // this is the new line to populate
     .then((oneUser) => {
-      const props = { oneUser: oneUser };
+      //const props = { oneUser: oneUser };
+
+      const userObj = { user: oneUser };
+      const props = userObj;
+
 
       console.log("props my tips list", props);
       res.render("MyTipsList", props);

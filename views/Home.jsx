@@ -3,7 +3,7 @@ const Layout = require("./Layout");
 
 function Home(props) {
     return (
-        <Layout title="Home Page">
+        <Layout title="Home Page" user={props.user}>
          <div class="cover occupy-space" >
             <form id="form" action="/alltips" method="GET" class="flex-form" >
             <h1 id="claim" >Zero waste lifestyle tips</h1>

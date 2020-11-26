@@ -39,8 +39,18 @@ authRouter.post("/login", (req, res, next) => {
 });
 // GET signup - render signup page
 authRouter.get("/signup", (req, res, next) => {
-  res.render("Signup");
+  const userid = req.session.currentUser._id;
+
+  User.findById(userid)
+    .then((oneUser) => {
+      const userObj = { user: oneUser };
+      const props = userObj;
+     
+      res.render("Signup", props);
+    })
+    .catch((err) => console.log(err));
 });
+  
 // POST signup
 authRouter.post("/signup", (req, res, next) => {
   const { email, password, repeatpassword } = req.body;
