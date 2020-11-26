@@ -10,8 +10,8 @@ function MyTipsList(props) {
       <Layout title="My Tips" user={props.user}>
     
         <h1>My Tips</h1>
-      {props.oneUser.createdTips !== [] ? 
-        (props.oneUser.createdTips.map((oneTip, i) => {
+      {props.user.createdTips !== [] ? 
+        (props.user.createdTips.map((oneTip, i) => {
           
          return (
            <div>

@@ -13,6 +13,7 @@ function AllTips(props) {
             title = {tip.title}
             description = {tip.description}
             text = {tip.text}
+            link = {tip.id}
           />
         );
       })}
