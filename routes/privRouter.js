@@ -68,7 +68,7 @@ privRouter.get(`/mytipslist`, isLoggedIn, (req, res, next) => {
       const props = userObj;
 
 
-      console.log("props my tips list", props);
+     // console.log("props my tips list", props);
       res.render("MyTipsList", props);
     })
     .catch((err) => console.log(err));

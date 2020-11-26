@@ -3,8 +3,8 @@ const Layout = require("./Layout");
 
 function Home(props) {
     return (
-        <Layout title="Home Page" user={props.user}>
-         <div class="cover occupy-space" >
+        <Layout title="Scoop lifestyle tips">
+         <div className="cover-image occupy-space full-height">
             <form id="form" action="/alltips" method="GET" class="flex-form" >
             <h1 id="claim" >Zero waste lifestyle tips</h1>
                 <input 
@@ -21,7 +21,7 @@ function Home(props) {
                  Find a Tip
                 </button>
             </form>
-      </div>
+         </div>
         </Layout>
     );
 }

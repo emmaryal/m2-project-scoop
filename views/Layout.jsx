@@ -17,7 +17,6 @@ function Layout(props) {
           crossOrigin="anonymous"
         />
         <link rel="stylesheet" href="/stylesheets/style.css" />
-        <link rel="stylesheet" href="/public/stylesheets/createtip.css" />
       </head>
       <body>
         <nav>

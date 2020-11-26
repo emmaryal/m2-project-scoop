@@ -6,15 +6,13 @@ const Tips = require ("./../models/Tips.models")
 
 
 function MyTipsList(props) {
-  
     return (
-      <Layout title="My List of Tips" user={props.user}>
+      <Layout title="My Tips" user={props.user}>
     
-        <h1>My List of Tips</h1>
-     
-        {props.user.createdTips !== [] ? 
-          (props.user.createdTips.map((oneTip, i) => {
-
+        <h1>My Tips</h1>
+      {props.user.createdTips !== [] ? 
+        (props.user.createdTips.map((oneTip, i) => {
+          
          return (
            <div>
              <h3 key={i}>{oneTip.title}</h3>

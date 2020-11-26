@@ -14,7 +14,7 @@ siteRouter.get("/alltips", (req, res, next) => {
     .then((allTipsFromDB) => {
       const props = { tips: allTipsFromDB };
       res.render("AllTips", props);
-      console.log(Tips);
+    //  console.log(Tips);
     })
     .catch((err) => console.log(err));
 });
