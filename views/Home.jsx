@@ -1,7 +1,7 @@
 const React = require("react");
 const Layout = require("./Layout");
 
-function Home() {
+function Home(props) {
     return (
         <Layout title="Scoop lifestyle tips">
          <div className="cover-image occupy-space full-height">
@@ -16,7 +16,7 @@ function Home() {
                 placeholder="Paper towel"/>
                 <button type="submit"
                 id="search-button" 
-                class="shadow"
+                className="shadow"
                 >
                  Find a Tip
                 </button>

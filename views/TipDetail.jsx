@@ -3,7 +3,7 @@ const Card = require("./components/Card");
 const Layout = require("./Layout");
 
 function TipDetail(props) {
-  console.log("detail", props);
+  console.log("props from alltips to tip detail page", props)
   
   return (
     <Layout>

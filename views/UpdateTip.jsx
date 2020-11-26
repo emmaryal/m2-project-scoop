@@ -3,14 +3,17 @@ const React = require("react");
 const Layout = require("./Layout");
 
 function UpdateTip(props) {
+  
   return (
-    <Layout title="Update or Delete Tip">
+  
+    <Layout title="UpdateTip" user={props.user}>
 
-      <h1>Update or Delete a Tip</h1>
+      <h1>Update a Tip</h1>
 
-      <form action={`/tips/edit/{props.oneTip._id}`} method="POST">
+      
+       <form action={`/private/tips/edit/?tipid=${props.oneTip._id}`} method="POST">
         <label>Title:</label>
-        <input type="text" name="title" value={props.oneTip.title}/>
+       <input type="text" name="title" value={props.oneTip.title}/>
         <br />
 
         <label>Description:</label>
@@ -20,12 +23,12 @@ function UpdateTip(props) {
         <label>Text:</label>
         <input type="text" name="text" value={props.oneTip.text}/>
         <br />
-
-        <button class="update-button" type="submit">
+  
+        <button className="update-button" type="submit">
           UPDATE
         </button>
       </form>
-      
+
     </Layout>
   );
 }
