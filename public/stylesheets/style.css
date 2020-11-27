@@ -18,16 +18,30 @@ body {
     width: 100%;
     min-width: auto;
     font-family: 'Source Sans Pro', sans-serif;
-    color: #ffffff;
+    color: grey;
     border-radius: 30px;
     background: transparent;
     text-decoration: none;
-    border: 1px solid #4778ff80;
+    border: 1px solid grey;
     outline: none;
     cursor: pointer; 
   }
 
 /* Search button Home*/
+
+.search-bar {
+  width: 100%;
+  min-width: auto;
+  font-family: 'Source Sans Pro', sans-serif;
+  color:  grey;
+  border-radius: 30px;
+  background: transparent;
+  text-decoration: none;
+  border: 1px solid grey;
+  outline: none;
+  cursor: pointer;
+} 
+
 button {
   min-width: 50px;
   top: 40%;
@@ -42,16 +56,19 @@ button {
   color: #ffffff;
   cursor: pointer;
 }
+
 .disabled {
   opacity: .4;
   cursor: auto;
 }
+
 main {
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
 }
+
 .cover-image {
   background-image: url('https://images.unsplash.com/flagged/photo-1552424519-ad13a3c13a0c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8emVybyUyMHdhc3RlfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60');
   background-repeat: no-repeat;
@@ -81,6 +98,7 @@ button:hover {
   -ms-transition: 0.3s ease background;
   -o-transition: 0.3s ease background;
 }
+
 .error-message {
   box-sizing: border-box;
   text-align: center;
@@ -92,12 +110,14 @@ button:hover {
   padding: 20px;
   width: 100%;
 }
+
 .dropdown {
   margin-bottom: 50px;
   padding-top: 10px;
   padding-left: 20px;
   font-size: large;
 }
+
 .form-wrapper {
   display: flex;
   flex-direction: column;
@@ -110,6 +130,7 @@ button:hover {
   justify-content: center;
   align-items: center;
 }
+
 .auth-form {
   display: flex;
   flex-direction: column;
@@ -351,6 +372,14 @@ button {
   height: 3.5em;
   width: 70%;
 }
+
+.form-button {
+  margin: 16%;
+  height: 3.5em;
+  width: 70%;
+}
+
+
 .search-container >  input {
   height: 3.3em;
 }
