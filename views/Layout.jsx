@@ -16,76 +16,40 @@ function Layout(props) {
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
           crossOrigin="anonymous"
         />
+        
         <link rel="stylesheet" href="/stylesheets/style.css" />
       </head>
       <body>
-        <nav>
-          <div className="dropdown">
-            <a
-              className="btn btn-secondary dropdown-toggle"
-              href="#"
-              role="button"
-              id="dropdownMenuLink"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Menu
-            </a>
-          <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a className="dropdown-item" href="/">
-              Home
-            </a>
+      <nav className="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div className="container">
+    <div className="navbar-header">
+      <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span className="sr-only">Toggle navigation</span>
+                    <span className="icon-bar"></span>
+                    <span className="icon-bar"></span>
+                    <span className="icon-bar"></span>
+                </button>
+    </div>
 
-            {props.user ? null : (
-              <a className="dropdown-item" href="/auth/login">
-                Login
-              </a>
-            )}
+    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul className="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/auth/login">Login</a></li>
+        <li><a href="/auth/signup">Signup</a></li>
+        {props.user ? (
+           <li><a href="/private/tipslist">Private Area</a></li>
+         ) : null }
+        {props.user ? (
+           <li><a href="/private/createtip">Create a Tip</a></li>
+         ) : null }
+          {props.user ? (
+           <li><a href="/auth/logout">Log out</a></li>
+         ) : null }
+      </ul>
+    </div>
+  </div>
+</nav>
 
-            {props.user ? null : (
-              <a className="dropdown-item" href="/auth/signup">
-                Signup
-              </a>
-            )}
-
-            {/*props.user ? (
-              <a className="dropdown-item" href="/private/tipslist">
-                My private area
-              </a>
-            ) : (
-              <a className="dropdown-item" href="/auth/login">
-                Login for private area
-              </a>
-            )*/}
-            
-            {props.user ? (
-              <a className="dropdown-item" href="/private/myprofile">
-                My profile
-              </a>
-            ) : null}
-
-
-            {props.user ? (
-              <a className="dropdown-item" href="/private/createtip">
-                Create a Tip
-              </a>
-            ) : null}
-
-            {props.user ? (
-              <a className="dropdown-item" href="/private/mytipslist">
-                Edit or Delete a Tip
-              </a>
-            ) : null}
-
-            {props.user ? (
-              <a className="dropdown-item" href="/auth/logout">
-                Logout
-              </a>
-            ) : null}
-            </div>
-          </div>
-        </nav>
         <div>{props.children}</div>
         <script
           src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

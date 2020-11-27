@@ -2,17 +2,26 @@ const React = require("react");
 const Layout = require("./Layout");
 
 function MyProfile(props) {
+  console.log("myprofile", props)
   return (
     <Layout title="My Profile" user={props.user}>
-      <h1>My Profile</h1>
-      <p>
-          <p>Welcome to your private area, {props.user.email}</p>
-          <br />
-          <p>display the user data here and the profile photo</p>
-    
-        <br />  
- <a href={`/private/mytipslist`}>link to my tips list</a>
-  </p> 
+      <div className="claim" id="modal-name">
+
+      <div className=" claim modal-sandbox"></div>
+      <h1 className="inner-title" >{props.user.name}'s Profile</h1>
+      <div className="modal-box">
+            <div className="modal-header">
+                <img src={props.user.image} className="inner-img" alt=""/>
+            </div>
+            <div className="modal-body">
+                <div className="inner-text">Welcome to your private area, {props.user.name}</div>
+                <br/>
+                <a href={`/private/mytipslist`}>> See or edit my tips</a>
+            </div>
+        </div>
+    </div>  
+      
+
       
     </Layout>
   );

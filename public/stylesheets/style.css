@@ -6,14 +6,15 @@ body {
   color: black;
   height: 100%;
 }
-#claim{
-  margin-left: 25px;
-  margin-bottom: 30px;
+
+.claim h1 {
+  margin: 25px;
+  text-align: center;
+  font-weight: 200;
 }
 
 /*search bar Home*/
   #search-bar {
-    height: 100%;
     width: 100%;
     min-width: auto;
     font-family: 'Source Sans Pro', sans-serif;
@@ -25,6 +26,7 @@ body {
     outline: none;
     cursor: pointer; 
   }
+
 /* Search button Home*/
 button {
   min-width: 50px;
@@ -51,7 +53,7 @@ main {
   flex-direction: column;
 }
 .cover-image {
-  background-image: url('https://www.esciupfnews.com/wp-content/uploads/2020/01/zero-waste-1024x576.jpg');
+  background-image: url('https://images.unsplash.com/flagged/photo-1552424519-ad13a3c13a0c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8emVybyUyMHdhc3RlfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -133,11 +135,12 @@ input  {
   width: 60%;
 }
 a {
-  color: #00b7ff;
+  color: #d4792e;
 }
 nav {
   width: 100%;
   background-image: none;
+  max-height: 0;
 }
 .nav-menu {
   display: flex;
@@ -173,6 +176,14 @@ li {
   box-sizing: content-box;
 }
 
+/* All tips */
+
+.flex-centered-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
   /* Cards */
 
   }
@@ -184,7 +195,6 @@ li {
     padding-left: 10px;
   }
   .posts-box {
-    position: absolute;
     max-width: 1024px;
     margin: 0 auto;
     padding: 20px 10px;
@@ -192,16 +202,15 @@ li {
     list-style: none;
   }
   .posts-box li {
-    position: absolute;
     display: inline-block;
     width: 320px;
     max-width: 100%;
     padding: 10px;
     vertical-align: top;
   }
-  .card {
 
-    padding-left: 30px;
+  .card {
+    padding: 30px;
     text-align: left;
     border-radius: 2px;
     background: #FFFFFF;
@@ -214,7 +223,6 @@ li {
     width: 100%;
   }
   .card div {
-    position: relative;
     padding: 16px 20px;
     border-bottom: 1px solid #EEEEEE;
   }
@@ -228,3 +236,121 @@ li {
     margin: 8px 0;
     font-size: .9em;
   }
+
+  /* Page */
+.modal,
+.modal-box {
+  z-index: 900;
+}
+.modal-sandbox {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: transparent;
+}
+.modal {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #FFB74D;
+  overflow: auto;
+}
+.modal-box {
+  position: relative;
+  width: 80%;
+  max-width: 920px;
+  margin: 100px auto;
+  background: #FFFFFF;
+  animation-name: modalbox;
+  animation-duration: .3s;
+  animation-timing-function: ease-out;
+}
+.modal-header img {
+  width: 100%;
+}
+.modal-body {
+  padding: 60px 8%;
+}
+.modal-body h2 {
+  margin-bottom: 30px;
+  letter-spacing: .06em;
+}
+.modal-body p {
+  font-size: .9em;
+  line-height: 1.5em;
+}
+@-webkit-keyframes modalbox {
+  0% {
+    top: -250px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes modalbox {
+  0% {
+    top: -250px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+button {
+  min-width: 120px;
+  top: 50%;
+  left: 50%;
+  padding: 16px 32px;
+  margin: 24px 8px 0 0;
+  background: transparent;
+  text-decoration: none;
+  border: 1px solid #FFC107;
+  outline: none;
+  color: #FFC107;
+  cursor: pointer;
+}
+.disabled {
+  opacity: .4;
+  cursor: auto;
+}
+
+.primary {
+  background-color: #FFC107;
+  color: white;
+}
+
+.space-above {
+  padding-top: 10em;
+  margin-top: -1em;
+}
+
+.detail-btn {
+  margin-top: 4em;
+}
+.fa-1x {
+  font-size: 1.5rem;
+  }
+
+.search-container {
+  margin: 9%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search-container >  button {
+  margin: 16%;
+  height: 3.5em;
+  width: 70%;
+}
+.search-container >  input {
+  height: 3.3em;
+}

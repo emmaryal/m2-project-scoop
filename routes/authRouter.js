@@ -39,8 +39,8 @@ authRouter.post("/login", (req, res, next) => {
 });
 // GET signup - render signup page
 authRouter.get("/signup", (req, res, next) => {
-  const userid = req.session.currentUser._id;
-
+/*  
+const userid = req.session.currentUser._id;
   User.findById(userid)
     .then((oneUser) => {
       const userObj = { user: oneUser };
@@ -49,13 +49,16 @@ authRouter.get("/signup", (req, res, next) => {
       res.render("Signup", props);
     })
     .catch((err) => console.log(err));
+    */
+   res.render("Signup");
+
 });
   
 // POST signup
 authRouter.post("/signup", (req, res, next) => {
-  const { email, password, repeatpassword } = req.body;
-  if (email === "" || password === "") {
-    const props = { errorMessage: "Enter email and password" };
+  const { name, email, password, repeatpassword, image } = req.body;
+  if (name === "" || email === "" || password === "" || image === "") {
+    const props = { errorMessage: "Enter name, email, password and image" };
     res.render("Signup", props);
     return;
   } else if (password !== repeatpassword) {
@@ -81,7 +84,7 @@ authRouter.post("/signup", (req, res, next) => {
 
       const salt = bcrypt.genSaltSync(saltRounds);
       const hashedPassword = bcrypt.hashSync(password, salt);
-      User.create({ email: email, password: hashedPassword })
+      User.create({name: name, email: email, password: hashedPassword, image: image })
         .then((createdSession) => {
           console.log("created user :", createdSession);
           req.session.currentUser = email;          //session should be created here!!!!!!!

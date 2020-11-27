@@ -1,36 +1,34 @@
 const React = require("react");
 const Layout = require("./Layout");
-const Profile = require("./MyProfile");
-const Tips = require ("./../models/Tips.models")
-
-
+const MyTipSummary = require ("./MyTipSummary")
 
 function MyTipsList(props) {
+  console.log("mytrips",props.user)
     return (
       <Layout title="My Tips" user={props.user}>
-    
-        <h1>My Tips</h1>
-      {props.user.createdTips !== [] ? 
-        (props.user.createdTips.map((oneTip, i) => {
-          
-         return (
-           <div>
-             <h3 key={i}>{oneTip.title}</h3>
-             <p>{oneTip.description}</p>
-             <p>{oneTip.text}</p>
-             
-             <a href={`/private/tips/edit/?tipid=${oneTip.id}`}>edit this tip</a>
-             <br />
-             <form action={`/private/tips/delete/?tipid=${oneTip.id}`} method="POST">
-             <button type = "submit" >delete this tip</button>
-           {/* <p>{oneTip.id}</p> */}
-           </form>
-           </div>
-         )}))
-         :
-(<div>no tips to display <br /><a href="/private/createtip">
-create tip
-</a></div>)
+        <div className="claim" >
+          <h1>{props.user.name}'s Tips</h1>
+        </div>
+        {props.user.createdTips !== [] ? 
+        (props.user.createdTips.map((tip, i) => { 
+          console.log(tip) 
+          return (
+            <MyTipSummary
+              image = {tip.image}
+              key = {i}
+              title = {tip.title}
+              description = {tip.description}
+              link = {tip._id}
+              user = {props.user}
+            />
+          )})) :
+          (
+            <div>no tips to display <br />
+              <a href="/private/createtip">
+                create tip
+              </a>
+            </div>
+          )
        
     }
       </Layout>
