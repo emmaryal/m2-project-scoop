@@ -24,8 +24,8 @@ mongoose
     process.env.MONGODB_URI,            //  <--- UPDATE
     {useNewUrlParser: true}
 	)
-  .then((x) => console.log('Connected to the DB')
-  .catch(err => console.error('Error while connecting to DB', err)));
+  .then((x) => console.log('Connected to the DB'))
+  .catch(err => console.error('Error while connecting to DB', err));
   
 
 // VIEW ENGINE SETUP
