@@ -121,14 +121,21 @@ button:hover {
 .form-wrapper {
   display: flex;
   flex-direction: column;
-  background-color: #007bff88;
   border-radius: 10px;
   margin:  auto;
   padding: 10px 20px;
-  width: 70vw;
-  height: 65vh;
-  justify-content: center;
-  align-items: center;
+}
+
+.margin-left-50 {
+  margin-left: 3.5rem;
+}
+
+.margin-left-30 {
+  margin-left: 1.5rem;
+}
+
+#margin-left-4 {
+  margin-left: 4.6rem;
 }
 
 .auth-form {
