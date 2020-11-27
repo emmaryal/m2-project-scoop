@@ -181,6 +181,7 @@ nav {
   justify-content: flex-end;
   padding: 0;
 }
+
 li {
   padding: 25px 10px 0 10px;
 }
@@ -276,7 +277,6 @@ li {
   z-index: 900;
 }
 .modal-sandbox {
-  position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
@@ -285,7 +285,6 @@ li {
 }
 .modal {
   display: none;
-  position: fixed;
   width: 100%;
   height: 100%;
   left: 0;

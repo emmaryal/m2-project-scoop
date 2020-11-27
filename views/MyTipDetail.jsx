@@ -3,7 +3,7 @@ const MyCardDetail = require("./components/MyCardDetail");
 const Layout = require("./Layout");
 
 function MyTipDetail(props) {
-  console.log("tipdetail",props)
+  console.log("myTipdetail",props)
   return (
     <Layout>
      <div className="claim">
