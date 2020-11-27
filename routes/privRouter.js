@@ -74,6 +74,21 @@ privRouter.get(`/mytipslist`, isLoggedIn, (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
+/* GET search details page */
+privRouter.get("/mytipdetail", (req, res, next) => {
+  const { tipid } = req.query;
+
+  console.log("mytipdetail", req.query)
+
+  // Find the specific tip by `_id`
+  Tips.findOne({ _id: tipid })
+    .then((oneTip) => {
+      const props = { oneTip: oneTip };
+      res.render("MyTipDetail", props);
+    })
+    .catch((err) => console.log(err));
+});
+
 //GET  /update tip -render update tip form
 privRouter.get("/tips/edit", isLoggedIn, (req, res, next) => {
   const userid = req.session.currentUser._id;
@@ -114,7 +129,6 @@ privRouter.post("/tips/edit", isLoggedIn, (req, res, next) => {
 //GET  /delete tip -render delete tip form
 /*privRouter.get("/tips/delete", isLoggedIn, (req, res, next) => {
   const { tipid } = req.query;
-
   // Find the specific tip by `_id`
   Tips.findOne({ _id: tipid })
     .then((oneTip) => {
@@ -124,11 +138,9 @@ privRouter.post("/tips/edit", isLoggedIn, (req, res, next) => {
     .catch((err) => console.log(err));
 });*/
 
-
-privRouter.post("/tips/delete", isLoggedIn, (req, res, next) => {
-
+privRouter.post("/tips/delete",isLoggedIn, (req, res, next) => {
   const {tipid}  = req.query;
- console.log("{tipid}  = req.query", req.query)
+  console.log("{tipid}  = req.query", req.query)
  //Tips.deleteOne({ _id: tipid })
  Tips.findByIdAndRemove({_id: tipid})
     .then(() => {
@@ -139,4 +151,3 @@ privRouter.post("/tips/delete", isLoggedIn, (req, res, next) => {
 });
 
 module.exports = privRouter;
-
