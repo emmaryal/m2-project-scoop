@@ -14,14 +14,14 @@ function MyCardDetail(props) {
                 <div className="inner-text">{props.text}</div>
                 <div className="detail-btn">
                     <a href={`/private/tips/edit/?tipid=${props.id}`}>
-                        <button className="primary  margin-left-30 ">
+                        <button className="primary margin-left-30">
                             Edit
                         </button>
                     </a>
                     <form
                         action={`/private/tips/delete?tipid=${props.id}`}
                         method="POST">
-                        <button className="prev-post  margin-left-30">Delete</button>                 
+                        <button className="prev-post margin-left-30">Delete</button>                 
                     </form>
                 </div>
             </div>

@@ -5,9 +5,9 @@ const Layout = require("./Layout");
 function CreateTip(props) {
   return (
     <Layout title="Create Tip"  user={props.user}>
-       <div className="claim"></div>
-       
-       <h1>Create a new Tip</h1>
+      <div className="claim">
+
+        <h1>Create a new Tip</h1>
         <div className="search-container">
           <form id="tip-form" action="/private/createtip" method="POST">
             <br/>
@@ -25,6 +25,11 @@ function CreateTip(props) {
             }
           </form>
         </div>
+
+        
+      </div>
+
+
     </Layout>
   );
 }

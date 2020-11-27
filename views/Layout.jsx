@@ -1,5 +1,5 @@
 const React = require("react");
-const isLoggedIn = require("./../utils/isLoggedIn");
+const isLoggedIn = require("../utils/isLoggedIn");
 function Layout(props) {
   
   return (
@@ -49,7 +49,6 @@ function Layout(props) {
     </div>
   </div>
 </nav>
-
         <div>{props.children}</div>
         <script
           src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

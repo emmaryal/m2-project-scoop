@@ -19,6 +19,7 @@ body {
   font-weight: 200;
 }
 
+/*search bar Home*/
   #search-bar {
     width: 100%;
     min-width: auto;
@@ -27,12 +28,10 @@ body {
     border-radius: 30px;
     background: transparent;
     text-decoration: none;
-    border: 1px solid grey;
+    border: 1px solid  grey;
     outline: none;
     cursor: pointer; 
   }
-
-/* Search button Home*/
 
 .search-bar {
   width: 100%;
@@ -45,8 +44,9 @@ body {
   border: 1px solid grey;
   outline: none;
   cursor: pointer;
-} 
+}  
 
+/* Search button Home*/
 button {
   min-width: 50px;
   top: 40%;
@@ -176,11 +176,9 @@ nav {
   background-image: none;
   max-height: 0;
 }
-
 .nav {
   z-index: -1;
 }
-
 .nav-menu {
   display: flex;
   flex-direction: row;
@@ -188,7 +186,6 @@ nav {
   padding: 0;
   z-index: -1;
 }
-
 li {
   padding: 25px 10px 0 10px;
 }
@@ -396,7 +393,6 @@ button {
   height: 3.5em;
   width: 70%;
 }
-
 
 .search-container >  input {
   height: 3.3em;

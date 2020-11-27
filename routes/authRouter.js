@@ -41,6 +41,7 @@ authRouter.post("/login", (req, res, next) => {
 authRouter.get("/signup", (req, res, next) => {
 /*  
 const userid = req.session.currentUser._id;
+
   User.findById(userid)
     .then((oneUser) => {
       const userObj = { user: oneUser };
@@ -49,6 +50,7 @@ const userid = req.session.currentUser._id;
       res.render("Signup", props);
     })
     .catch((err) => console.log(err));
+
     */
    res.render("Signup");
 

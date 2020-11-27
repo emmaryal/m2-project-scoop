@@ -24,3 +24,5 @@ const tips =[
         createdAt: new Date(2020, 11, 10)
     }
 ];
+
+module.exports = tips

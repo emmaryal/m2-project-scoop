@@ -7,27 +7,26 @@ function UpdateTip(props) {
   return (
   
     <Layout title="UpdateTip" user={props.user}>
-
-      <h1>Update a Tip</h1>
-
+      <div className="claim">
+        <h1>Edit a Tip</h1>
+        <div className="search-container">
+          <form action={`/private/tips/edit/?tipid=${props.oneTip._id}`} method="POST">
+          <input className="search-bar" type="text" name="title" value={props.oneTip.title}/>
+           <br />
+           <input className="search-bar" type="text" name="description" value={props.oneTip.description}/>
+           <br />
+           <input className="search-bar" type="text" name="text" value={props.oneTip.text}/>
+           <br />
+           <input className="search-bar" type="text" name="image" value={props.oneTip.image}/>
+           <br />
+           <button className="update-button shadow primary form-button" type="submit">
+             Update
+           </button>
+          </form>
+        </div>
+        
+      </div>
       
-       <form action={`/private/tips/edit/?tipid=${props.oneTip._id}`} method="POST">
-        <label>Title:</label>
-       <input type="text" name="title" value={props.oneTip.title}/>
-        <br />
-
-        <label>Description:</label>
-        <input type="text" name="description" value={props.oneTip.description}/>
-        <br />
-
-        <label>Text:</label>
-        <input type="text" name="text" value={props.oneTip.text}/>
-        <br />
-  
-        <button className="update-button" type="submit">
-          UPDATE
-        </button>
-      </form>
 
     </Layout>
   );
