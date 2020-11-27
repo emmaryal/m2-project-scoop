@@ -16,7 +16,7 @@ function MyProfile(props) {
             <div className="modal-body">
                 <div className="inner-text">Welcome to your private area, {props.user.name}</div>
                 <br/>
-                <a href={`/private/mytipslist`}>> See or edit my tips</a>
+                <a href={`/private/mytipslist`}> > See or edit my tips</a>
             </div>
         </div>
     </div>  
