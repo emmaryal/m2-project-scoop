@@ -13,7 +13,12 @@ body {
   font-weight: 200;
 }
 
-/*search bar Home*/
+.claim h5 {
+  margin: 25px;
+  text-align: center;
+  font-weight: 200;
+}
+
   #search-bar {
     width: 100%;
     min-width: auto;

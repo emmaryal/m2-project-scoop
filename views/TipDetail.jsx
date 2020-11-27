@@ -6,8 +6,10 @@ function TipDetail(props) {
   console.log("tipdetail",props)
   return (
     <Layout>
-    <h3 className="tip-title">Zero waste is a Journey.</h3>
-    <h5 className="tip-subtitle">Small steps add up to big results</h5>
+    <div className="claim">
+    <h5 className="tip-subtitle">Small steps add up to big results</h5>	        <h1 className="">Zero waste is a Journey.</h1>
+        <h5 className="">Small steps add up to big results</h5>
+      </div>
       <CardDetail 
         image = {props.oneTip.image}
         title = {props.oneTip.title}
