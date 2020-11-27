@@ -23,7 +23,8 @@ function Layout(props) {
       <nav className="navbar navbar-inverse navbar-static-top" role="navigation">
   <div className="container">
     <div className="navbar-header">
-      <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <button type="button" className="navbar-toggle collapsed bg-warning text-secondary" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    Menu
                     <span className="sr-only">Toggle navigation</span>
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>
@@ -34,10 +35,15 @@ function Layout(props) {
     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul className="nav navbar-nav">
         <li><a href="/">Home</a></li>
-        <li><a href="/auth/login">Login</a></li>
-        <li><a href="/auth/signup">Signup</a></li>
         {props.user ? (
-           <li><a href="/private/tipslist">Private Area</a></li>
+           null
+         ) : <li><a href="/auth/login">Login</a></li>}
+        {props.user ? (
+           null
+         ) : <li><a href="/auth/signup">Signup</a></li>}
+        
+        {props.user ? (
+           <li><a href="/private/mytipslist">Edit or Delete a Tip</a></li>
          ) : null }
         {props.user ? (
            <li><a href="/private/createtip">Create a Tip</a></li>

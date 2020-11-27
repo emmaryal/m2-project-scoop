@@ -16,7 +16,7 @@ function CreateTip(props) {
             <input className="search-bar" type="text" name="description" placeholder="Add a short description" />
             <br/>
             <input className="search-bar" type="text" name="text" placeholder="You can write your content here"/>
-            <input className="search-bar" type="text" name="image" placeholder="Add a tip image"/>
+            
             <button className="shadow primary form-button" type="submit">Create Tip</button>
 
             {

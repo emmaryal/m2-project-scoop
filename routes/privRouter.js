@@ -39,10 +39,10 @@ privRouter.get("/createtip", isLoggedIn, (req, res, next) => {
 //POST recieves the data from create tip form
 privRouter.post("/createtip", isLoggedIn, (req, res, next) => {
   // Destructure the values coming from the POST form
-  const { title, description, text, image } = req.body;
+  const { title, description, text} = req.body;
   const userId = req.session.currentUser._id;
   console.log("session id to add to createdby field:", userId);
-  Tips.create({ title, description, text, userId: userId, image:image })
+  Tips.create({ title, description, text, userId: userId })
     .then((tip) => {
       const pr = User.findByIdAndUpdate(
         userId,
@@ -52,7 +52,7 @@ privRouter.post("/createtip", isLoggedIn, (req, res, next) => {
       return pr;
     })
     .then((updatedUser) => {
-      res.redirect(`/private/mytipsñist`);
+      res.redirect(`/private/mytipslist`);
     })
     .catch((error) => console.log(error));
 });
