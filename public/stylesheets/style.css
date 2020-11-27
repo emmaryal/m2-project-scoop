@@ -158,16 +158,23 @@ input  {
 a {
   color: #d4792e;
 }
+
 nav {
   width: 100%;
   background-image: none;
   max-height: 0;
 }
+
+.nav {
+  z-index: -1;
+}
+
 .nav-menu {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   padding: 0;
+  z-index: -1;
 }
 li {
   padding: 25px 10px 0 10px;
