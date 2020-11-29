@@ -42,7 +42,7 @@ privRouter.post("/createtip", isLoggedIn, (req, res, next) => {
   const { title, description, text, image } = req.body;
   const userId = req.session.currentUser._id;
   console.log("session id to add to createdby field:", userId);
-  Tips.create({ title, description, text, userId: userId, image: image })
+  Tips.create({ title, description, text, userId: userId, image })
     .then((tip) => {
       const pr = User.findByIdAndUpdate(
         userId,
@@ -52,7 +52,7 @@ privRouter.post("/createtip", isLoggedIn, (req, res, next) => {
       return pr;
     })
     .then((updatedUser) => {
-      res.redirect(`/private//mytipslist`);
+      res.redirect(`/alltips`);
     })
     .catch((error) => console.log(error));
 });

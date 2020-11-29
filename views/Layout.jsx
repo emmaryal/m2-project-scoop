@@ -37,7 +37,7 @@ function Layout(props) {
         <li><a href="/auth/login">Login</a></li>
         <li><a href="/auth/signup">Signup</a></li>
         {props.user ? (
-           <li><a href="/private/tipslist">Private Area</a></li>
+           <li><a href="/private/mytipslist">Private Area</a></li>
          ) : null }
         {props.user ? (
            <li><a href="/private/createtip">Create a Tip</a></li>

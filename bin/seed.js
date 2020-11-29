@@ -7,7 +7,6 @@ const users = require("./users-mock-data");
 const tips = require("./tips-mock-data");
 //const DB_NAME = "DB_Scoop";
 mongoose
- 
   .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
