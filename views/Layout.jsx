@@ -1,6 +1,7 @@
 const React = require("react");
 const isLoggedIn = require("../utils/isLoggedIn");
 function Layout(props) {
+  console.log("layout",props.user)
   
   return (
     <html lang="en">
@@ -37,12 +38,12 @@ function Layout(props) {
         <li><a href="/auth/login">Login</a></li>
         <li><a href="/auth/signup">Signup</a></li>
         {props.user ? (
-           <li><a href="/private/mytipslist">Private Area</a></li>
+           <li><a href="/private/myprofile">Private Area</a></li>
          ) : null }
         {props.user ? (
            <li><a href="/private/createtip">Create a Tip</a></li>
          ) : null }
-          {props.user ? (
+        {props.user ? (
            <li><a href="/auth/logout">Log out</a></li>
          ) : null }
       </ul>

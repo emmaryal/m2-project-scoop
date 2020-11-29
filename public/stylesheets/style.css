@@ -8,7 +8,7 @@ body {
 }
 
 .claim h1 {
-  margin: 25px;
+  margin: 82px 25px 25px 25px;
   text-align: center;
   font-weight: 200;
 }
@@ -131,6 +131,10 @@ button:hover {
   padding: 10px 20px;
 }
 
+.margin-sign-up {
+  margin-left: 3.5em;
+}
+
 .margin-left-50 {
   margin-left: 3.5rem;
 }
@@ -186,9 +190,12 @@ nav {
   padding: 0;
   z-index: -1;
 }
+
 li {
-  padding: 25px 10px 0 10px;
+  padding: 6px 10px 0 10px;
+
 }
+
 .btn-secondary {
   font-size: 50px;
 }
@@ -297,7 +304,6 @@ li {
   overflow: auto;
 }
 .modal-box {
-  position: relative;
   width: 80%;
   max-width: 920px;
   margin: 100px auto;
@@ -364,7 +370,7 @@ button {
 }
 
 .space-above {
-  padding-top: 10em;
+  padding-top: 6em;
   margin-top: -1em;
 }
 

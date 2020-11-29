@@ -6,7 +6,7 @@ function Signup(props) {
       <div className="claim">
         <h1>Sign up</h1>
       </div>
-      <div className = "form-wrapper"><form className="auth-form" action="/auth/signup" method="POST">
+      <div className = "form-wrapper margin-sign-up"><form className="auth-form" action="/auth/signup" method="POST">
         <input className="search-bar" type="name" name="name" placeholder="Name" />
         <input className="search-bar" type="email" name="email" placeholder="Email" />
         <input className="search-bar" type="password" name="password" placeholder="Password"/>
